@@ -44,11 +44,14 @@ TagManager:
   - name: Background
     uniqueID: 944670715
     locked: 0
-  - name: Midground
+  - name: Background_Forest
     uniqueID: 554127769
     locked: 0
-  - name: Midground_Rocks
-    uniqueID: 4280222617
+  - name: Midground
+    uniqueID: 3858054169
+    locked: 0
+  - name: Player
+    uniqueID: 1137806517
     locked: 0
   - name: Solid
     uniqueID: 79072019
