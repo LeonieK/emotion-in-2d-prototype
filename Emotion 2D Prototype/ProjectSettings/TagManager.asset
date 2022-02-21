@@ -13,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Player
+  - Obstacle
   - 
   - 
   - 
@@ -40,4 +40,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 944670715
+    locked: 0
+  - name: Midground
+    uniqueID: 554127769
+    locked: 0
+  - name: Midground_Rocks
+    uniqueID: 4280222617
+    locked: 0
+  - name: Solid
+    uniqueID: 79072019
+    locked: 0
+  - name: Foreground
+    uniqueID: 602204813
     locked: 0
