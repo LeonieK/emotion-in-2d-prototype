@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 79224e9ad2bebac4c88ca315789ffe95
   - enabled: 1
+    path: Assets/Scenes/Prototype_Room_Neutral.unity
+    guid: 249eab86487c6c04d91b6b3305f82c6b
+  - enabled: 1
+    path: Assets/Scenes/SAM_Questionnaire.unity
+    guid: ba6b319680e62ae44a3745e33822c240
+  - enabled: 1
     path: Assets/Scenes/Prototype_Room1.unity
     guid: 2733771c95809f94dada2a3dda7c0542
   - enabled: 1

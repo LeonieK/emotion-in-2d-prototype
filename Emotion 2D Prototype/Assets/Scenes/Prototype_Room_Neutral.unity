@@ -24570,7 +24570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e921ece02cfab41a04ee26417e19eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadScene: Scenes/Prototype_Room2
+  loadScene: Scenes/SAM_Questionnaire
 --- !u!61 &1890496181
 BoxCollider2D:
   m_ObjectHideFlags: 0
