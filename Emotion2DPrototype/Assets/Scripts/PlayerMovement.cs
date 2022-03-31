@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Windows.Forms;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -8,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController2D controller;
     public Animator animator;
     public Joystick joystick;
+    public Button jumpButton = null;
     public float runSpeed = 40f;
     float horizontalMove = 0f;
     bool jump = false;
@@ -21,27 +23,28 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frames
     void Update()
     {
-        if (joystick.Horizontal >= .2f){
-            horizontalMove = runSpeed;
-        } else if (joystick.Horizontal <= -0.2){
-            horizontalMove = -runSpeed;
-        } else {
-            horizontalMove = 0f;
-        }
 
+    }
+
+    public void OnIdle()
+    {
+        horizontalMove = 0f;
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
-
-        float verticalMove = joystick.Vertical;
-
-        if (verticalMove >= .5f){
-            jump = true;
-            animator.SetBool("IsJumping", true);
-        }
-        if (verticalMove <= -.5f){
-            crouch = true;
-        } else {
-            crouch = false;
-        }
+    }
+    public void OnLeftButton()
+    {
+        horizontalMove = -runSpeed;
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+    }
+    public void OnRightButton()
+    {
+        horizontalMove = runSpeed;
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+    }
+    public void OnJumpButton()
+    {
+        jump = true;
+        animator.SetBool("IsJumping", true);
     }
 
     public void OnLanding (){

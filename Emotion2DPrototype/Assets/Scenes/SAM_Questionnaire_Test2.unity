@@ -609,7 +609,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.75
+  m_fontSize: 35
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1217,10 +1217,10 @@ RectTransform:
   m_Father: {fileID: 510728202}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 140}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1260, y: -70}
+  m_SizeDelta: {x: 280, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &232320632
 MonoBehaviour:
@@ -1369,21 +1369,21 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34.5
+  m_fontSize: 34.45
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 35
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -1438,7 +1438,7 @@ GameObject:
   - component: {fileID: 306861670}
   - component: {fileID: 306861669}
   m_Layer: 5
-  m_Name: LinearScale_Item 1
+  m_Name: LinearScale_Dominance
   m_TagString: QTLinearScale
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1478,9 +1478,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   answerRequired: 1
-  headerName: Item 1
-  question: "Bitte w\xE4hle das Bild das deine aktuelle Gef\xFChlslage am besten
-    repr\xE4sentiert:"
+  headerName: Dominance
+  question: "Bitte w\xE4hle die Zahl des Bilds das deine aktuelle Gef\xFChlslage
+    am besten repr\xE4sentiert:"
   options:
   - {fileID: 622337081}
   - {fileID: 1293843143}
@@ -1680,7 +1680,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 56.039}
+  m_SizeDelta: {x: 0, y: 170}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &347953823
 MonoBehaviour:
@@ -2091,7 +2091,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 56.039}
+  m_SizeDelta: {x: 0, y: 170}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &373629386
 MonoBehaviour:
@@ -2694,7 +2694,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 56.039}
+  m_SizeDelta: {x: 0, y: 194}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &405900694
 MonoBehaviour:
@@ -2977,10 +2977,10 @@ RectTransform:
   m_Father: {fileID: 510728202}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 140}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 700, y: -70}
+  m_SizeDelta: {x: 280, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &441838263
 MonoBehaviour:
@@ -3084,7 +3084,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.099975586, y: 9.900024}
+  m_AnchoredPosition: {x: -0.1, y: 77}
   m_SizeDelta: {x: 148.1, y: 38.5}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &442063534
@@ -3355,8 +3355,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -1.5}
-  m_SizeDelta: {x: 0, y: -109}
+  m_AnchoredPosition: {x: 0, y: 68.547}
+  m_SizeDelta: {x: 0, y: -249.09}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &462914715
 MonoBehaviour:
@@ -3960,8 +3960,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6643541, y: 0}
   m_AnchorMax: {x: 0.6643541, y: 0}
-  m_AnchoredPosition: {x: -17.578247, y: 29.33667}
-  m_SizeDelta: {x: 186.0763, y: 38.54}
+  m_AnchoredPosition: {x: 17, y: 84}
+  m_SizeDelta: {x: 280, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &512582554
 MonoBehaviour:
@@ -4626,10 +4626,10 @@ RectTransform:
   m_Father: {fileID: 510728202}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 140}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 140, y: -70}
+  m_SizeDelta: {x: 280, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &622337083
 MonoBehaviour:
@@ -4903,7 +4903,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.099975586, y: 9.900024}
+  m_AnchoredPosition: {x: -0.099975586, y: 77}
   m_SizeDelta: {x: 148.1, y: 38.5}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &653522797
@@ -5087,7 +5087,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34.45
+  m_fontSize: 35
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5511,7 +5511,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Bitte w\xE4hle das Bild das deine aktuelle Gef\xFChlslage am besten repr\xE4sentiert:"
+  m_text: "Bitte w\xE4hle die Zahl des Bilds das deine aktuelle Gef\xFChlslage am
+    besten repr\xE4sentiert:"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5538,7 +5539,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39.2
+  m_fontSize: 34.75
   m_fontSizeBase: 41
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5967,7 +5968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9245, g: 0.9245, b: 0.9245, a: 0.8}
+  m_Color: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 0.8}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6062,7 +6063,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1600, y: 900}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!1 &787184615
 GameObject:
@@ -6425,7 +6426,7 @@ GameObject:
   - component: {fileID: 825905635}
   - component: {fileID: 825905634}
   m_Layer: 5
-  m_Name: LinearScale_Item 1
+  m_Name: LinearScale_Arousal
   m_TagString: QTLinearScale
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6465,9 +6466,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   answerRequired: 1
-  headerName: Item 1
-  question: "Bitte w\xE4hle das Bild das deine aktuelle Gef\xFChlslage am besten
-    repr\xE4sentiert:"
+  headerName: Arousal
+  question: "Bitte w\xE4hle die Zahl des Bilds das deine aktuelle Gef\xFChlslage
+    am besten repr\xE4sentiert:"
   options:
   - {fileID: 988994062}
   - {fileID: 1970578332}
@@ -7123,7 +7124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9245, g: 0.9245, b: 0.9245, a: 0.8}
+  m_Color: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 0.8}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7218,7 +7219,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1600, y: 900}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!1 &912623542
 GameObject:
@@ -8464,7 +8465,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.000090939284}
-  m_SizeDelta: {x: -183, y: 574.5}
+  m_SizeDelta: {x: -582.9999, y: 574.5}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1113357537
 MonoBehaviour:
@@ -8729,7 +8730,7 @@ GameObject:
   - component: {fileID: 1196903285}
   - component: {fileID: 1196903284}
   m_Layer: 5
-  m_Name: LinearScale_Item 3
+  m_Name: LinearScale_Valence
   m_TagString: QTLinearScale
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8748,9 +8749,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   answerRequired: 1
-  headerName: Item 3
-  question: "Bitte w\xE4hle das Bild das deine aktuelle Gef\xFChlslage am besten
-    repr\xE4sentiert:"
+  headerName: Valence
+  question: "Bitte w\xE4hle die Zahl des Bilds das deine aktuelle Gef\xFChlslage
+    am besten repr\xE4sentiert:"
   options:
   - {fileID: 696214580}
   - {fileID: 741279186}
@@ -9558,7 +9559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9245, g: 0.9245, b: 0.9245, a: 0.8}
+  m_Color: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 0.8}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9871,10 +9872,10 @@ RectTransform:
   m_Father: {fileID: 510728202}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 140}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 420, y: -70}
+  m_SizeDelta: {x: 280, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1293843145
 MonoBehaviour:
@@ -11114,7 +11115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.099975586, y: 9.900024}
+  m_AnchoredPosition: {x: -0.099975586, y: 77}
   m_SizeDelta: {x: 148.1, y: 38.5}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1510333444
@@ -11164,7 +11165,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34.45
+  m_fontSize: 36.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -11200,7 +11201,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: -2.801838, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -11298,7 +11299,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.3
+  m_fontSize: 35
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -11534,7 +11535,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1600, y: 53.281}
+  m_SizeDelta: {x: 1600, y: 56.0829}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1695927442
 MonoBehaviour:
@@ -11934,7 +11935,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Bitte w\xE4hle das Bild das deine aktuelle Gef\xFChlslage am besten repr\xE4sentiert:"
+  m_text: "Bitte w\xE4hle die Zahl des Bilds das deine aktuelle Gef\xFChlslage am
+    besten repr\xE4sentiert:"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11961,7 +11963,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39.2
+  m_fontSize: 34.75
   m_fontSizeBase: 41
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -13060,7 +13062,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1870483741}
   m_HandleRect: {fileID: 1870483740}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -13176,8 +13178,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6643541, y: 0}
   m_AnchorMax: {x: 0.6643541, y: 0}
-  m_AnchoredPosition: {x: 0.75, y: 29.33667}
-  m_SizeDelta: {x: 149.42, y: 38.54}
+  m_AnchoredPosition: {x: 17, y: 95}
+  m_SizeDelta: {x: 280, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1917352767
 MonoBehaviour:
@@ -13310,7 +13312,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.000065617714}
-  m_SizeDelta: {x: 194.18506, y: 574.5}
+  m_SizeDelta: {x: -582.9999, y: 574.5}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1921625592
 MonoBehaviour:
@@ -13583,10 +13585,10 @@ RectTransform:
   m_Father: {fileID: 510728202}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 140}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 980, y: -70}
+  m_SizeDelta: {x: 280, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1979200574
 MonoBehaviour:
@@ -13714,7 +13716,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Bitte w\xE4hle das Bild das deine aktuelle Gef\xFChlslage am besten repr\xE4sentiert:"
+  m_text: "Bitte w\xE4hle die Zahl des Bilds das deine aktuelle Gef\xFChlslage am
+    besten repr\xE4sentiert:"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13741,7 +13744,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39.2
+  m_fontSize: 34.75
   m_fontSizeBase: 41
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -14144,8 +14147,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6643541, y: 0}
   m_AnchorMax: {x: 0.6643541, y: 0}
-  m_AnchoredPosition: {x: -22.814697, y: 29.33667}
-  m_SizeDelta: {x: 196.5495, y: 38.54}
+  m_AnchoredPosition: {x: 17, y: 84}
+  m_SizeDelta: {x: 280, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2057726529
 MonoBehaviour:
@@ -14675,16 +14678,16 @@ MonoBehaviour:
   generateFinishTimestamp: 0
   overwriteResultsHeaderItems: 0
   resultsHeaderItems:
-  - Item 3
-  - Item 1
-  - Item 1_1
+  - Valence
+  - Arousal
+  - Dominance
   questionPages:
   - {fileID: 765568715}
   - {fileID: 905219051}
   - {fileID: 1269601118}
   additionalCsvItems:
     array: []
-  pageBackgroundColor: {r: 0.9245, g: 0.9245, b: 0.9245, a: 0.8}
+  pageBackgroundColor: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 0.8}
   pageBottomColor: {r: 0.7825541, g: 0.792062, b: 0.8018868, a: 1}
   highlightColor: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 1}
   running: 0
