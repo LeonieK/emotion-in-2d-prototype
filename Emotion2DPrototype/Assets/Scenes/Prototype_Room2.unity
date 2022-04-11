@@ -6621,7 +6621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6931da223139a2743865723328244d25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 300
+  m_JumpForce: 600
   m_CrouchSpeed: 0.36
   m_MovementSmoothing: 0.05
   m_AirControl: 1
@@ -6743,7 +6743,8 @@ MonoBehaviour:
   controller: {fileID: 557282617}
   animator: {fileID: 557282621}
   joystick: {fileID: 0}
-  runSpeed: 15
+  jumpButton: {fileID: 0}
+  runSpeed: 18
 --- !u!95 &557282621
 Animator:
   serializedVersion: 3

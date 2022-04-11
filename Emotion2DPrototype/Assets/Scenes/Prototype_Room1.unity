@@ -6910,7 +6910,8 @@ MonoBehaviour:
   controller: {fileID: 557282617}
   animator: {fileID: 557282621}
   joystick: {fileID: 0}
-  runSpeed: 15
+  jumpButton: {fileID: 0}
+  runSpeed: 18
 --- !u!95 &557282621
 Animator:
   serializedVersion: 3
