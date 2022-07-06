@@ -2216,7 +2216,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &2097917550
 MonoBehaviour:
@@ -2276,8 +2276,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 2097917550}
   animator: {fileID: 2097917553}
-  joystick: {fileID: 0}
-  jumpButton: {fileID: 0}
   runSpeed: 40
 --- !u!95 &2097917553
 Animator:

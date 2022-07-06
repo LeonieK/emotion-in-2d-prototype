@@ -6,21 +6,19 @@ public class PlayerMovement : MonoBehaviour
 
     public CharacterController2D controller;
     public Animator animator;
-    public Button jumpButton = null;
     public float runSpeed = 40f;
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frames
     void Update()
     {
-        
+        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+
+        if(Input.GetButtonDown("Jump")){
+            jump = true;
+        }
     }
 
     public void OnIdle()
