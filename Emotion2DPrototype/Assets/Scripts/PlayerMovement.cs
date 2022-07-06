@@ -6,7 +6,6 @@ public class PlayerMovement : MonoBehaviour
 
     public CharacterController2D controller;
     public Animator animator;
-    public Joystick joystick;
     public Button jumpButton = null;
     public float runSpeed = 40f;
     float horizontalMove = 0f;
@@ -21,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frames
     void Update()
     {
-
+        
     }
 
     public void OnIdle()
