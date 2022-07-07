@@ -25,6 +25,7 @@ TagManager:
   - QTVideo
   - Collectible
   - Obstacle
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -36,7 +37,7 @@ TagManager:
   - 
   - Player
   - Obstacle
-  - 
+  - Ground
   - 
   - 
   - 
@@ -68,11 +69,14 @@ TagManager:
   - name: Midground
     uniqueID: 3858054169
     locked: 0
-  - name: Player
-    uniqueID: 1137806517
-    locked: 0
   - name: Solid
     uniqueID: 79072019
+    locked: 0
+  - name: Enemy
+    uniqueID: 3844538589
+    locked: 0
+  - name: Player
+    uniqueID: 1137806517
     locked: 0
   - name: Foreground
     uniqueID: 602204813

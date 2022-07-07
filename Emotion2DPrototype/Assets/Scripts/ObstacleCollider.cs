@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class ObstacleCollider : MonoBehaviour
 {
-    [SerializeField] private GameObject respawnPosition;
     private Animator anim;
     private Rigidbody2D rb;
     public GameObject[] hearts;
@@ -27,12 +26,21 @@ public class ObstacleCollider : MonoBehaviour
         if(other.gameObject.CompareTag("Obstacle"))
         {
             if(life > 1){
-                TakeDamage(1, other.gameObject.transform.GetChild(0).transform.position.x,other.gameObject.transform.GetChild(0).transform.position.y);
+                TakeDamage(1);
+                transform.position = new Vector2(other.gameObject.transform.GetChild(0).transform.position.x,other.gameObject.transform.GetChild(0).transform.position.y);
             } else{
                 Destroy(hearts[0].gameObject);
                 Die();
             }
             
+        } else if (other.gameObject.CompareTag("Enemy")){
+             if(life > 1){
+                TakeDamage(1);
+                transform.position = new Vector2(other.transform.position.x-1, other.transform.position.y);
+            } else{
+                Destroy(hearts[0].gameObject);
+                Die();
+            }
         }
     }
 
@@ -47,11 +55,11 @@ public class ObstacleCollider : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void TakeDamage(int damage, float x, float y)
+    public void TakeDamage(int damage)
     {
         life -= damage;
         Destroy(hearts[life].gameObject);
-        transform.position = new Vector2(x,y);
+        
     }
 
 }
