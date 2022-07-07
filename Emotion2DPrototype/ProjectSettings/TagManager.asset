@@ -23,6 +23,8 @@ TagManager:
   - QTText
   - QTTextInput
   - QTVideo
+  - Collectible
+  - Obstacle
   layers:
   - Default
   - TransparentFX
