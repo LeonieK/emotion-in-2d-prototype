@@ -3679,9 +3679,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.084015965, y: -0.6527399}
+  m_Offset: {x: 0.08771813, y: -0.7563987}
   serializedVersion: 2
-  m_Radius: 0.5532441
+  m_Radius: 0.4755001
 --- !u!1 &1461148615
 GameObject:
   m_ObjectHideFlags: 0
@@ -4293,6 +4293,14 @@ PrefabInstance:
       propertyPath: hearts.Array.data[4]
       value: 
       objectReference: {fileID: 785127782}
+    - target: {fileID: 575208368, guid: 3fe403222df65ae4d9bf4a6342d97fff, type: 3}
+      propertyPath: invincibilityDurationSeconds
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960924238260893197, guid: 3fe403222df65ae4d9bf4a6342d97fff, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8960924238260893200, guid: 3fe403222df65ae4d9bf4a6342d97fff, type: 3}
       propertyPath: m_RootOrder
       value: 6

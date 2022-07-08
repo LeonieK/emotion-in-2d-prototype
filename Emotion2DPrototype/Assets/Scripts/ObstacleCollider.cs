@@ -6,7 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class ObstacleCollider : MonoBehaviour
 {
+    [SerializeField] private float invincibilityDurationSeconds = 3f;
+    [SerializeField] private float invincibilityDeltaTime = 0.15f;
     private Animator anim;
+    private bool isInvincible = false;
     private Rigidbody2D rb;
     public GameObject[] hearts;
     public int life;
@@ -25,23 +28,40 @@ public class ObstacleCollider : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Obstacle"))
         {
-            if(life > 1){
+            if(life > 1 && !isInvincible){
                 TakeDamage(1);
-                transform.position = new Vector2(other.gameObject.transform.GetChild(0).transform.position.x,other.gameObject.transform.GetChild(0).transform.position.y);
-            } else{
-                Destroy(hearts[0].gameObject);
+                transform.position = new Vector2(other.gameObject.transform.GetChild(0).transform.position.x,
+                    other.gameObject.transform.GetChild(0).transform.position.y);
+                StartCoroutine(GetInvulnerable());
+            } else if (life <= 1 && !isInvincible){
+                hearts[0].gameObject.GetComponent<Animator>().SetTrigger("destroy");
+                Destroy(hearts[0].gameObject, 0.7f);
                 Die();
             }
             
         } else if (other.gameObject.CompareTag("Enemy")){
-             if(life > 1){
+             if(life > 1 && !isInvincible){
                 TakeDamage(1);
-                transform.position = new Vector2(other.transform.position.x-1, other.transform.position.y);
-            } else{
-                Destroy(hearts[0].gameObject);
+                //transform.position = new Vector2(other.transform.position.x, other.transform.position.y);
+                StartCoroutine(GetInvulnerable());
+            } else if (life <= 1 && !isInvincible){
+                hearts[0].gameObject.GetComponent<Animator>().SetTrigger("destroy");
+                Destroy(hearts[0].gameObject, 0.7f);
                 Die();
             }
         }
+    }
+
+    IEnumerator GetInvulnerable(){
+        isInvincible = true;
+        anim.SetTrigger("invincibility");
+        for(float i = 0; i < invincibilityDurationSeconds; i+=invincibilityDeltaTime)
+        {
+            yield return new WaitForSeconds(invincibilityDeltaTime);
+        }
+        
+        isInvincible = false;
+        anim.SetTrigger("normal");
     }
 
     private void Die()
@@ -58,7 +78,8 @@ public class ObstacleCollider : MonoBehaviour
     public void TakeDamage(int damage)
     {
         life -= damage;
-        Destroy(hearts[life].gameObject);
+        hearts[life].gameObject.GetComponent<Animator>().SetTrigger("destroy");
+        Destroy(hearts[life].gameObject, 0.7f);
         
     }
 
