@@ -53,7 +53,6 @@ public class NPCDialogue : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Player"))
         {
-            Debug.Log("OnTriggerEnter2D");
             //playerIsClose = true;
             interactButton.SetActive(true);
         }

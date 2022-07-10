@@ -10,6 +10,6 @@ public class LoadScene : MonoBehaviour
 
     public void LoadPopupScene()
     {
-        SceneManager.LoadScene("PopupShowData");
+        SceneManager.LoadScene("ShowData");
     }
 }

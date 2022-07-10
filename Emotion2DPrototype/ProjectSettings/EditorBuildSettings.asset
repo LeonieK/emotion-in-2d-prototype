@@ -5,10 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/Ishihara_Test.unity
+    guid: f693281791c75b94d9041c8c1e7ec36f
   - enabled: 1
+    path: Assets/Scenes/ShowData.unity
+    guid: 552b7b37cc5a6734d9c96c43899a2af3
+  - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: 6831384c88bc6324a89e264a95451f7f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototype_Room1_new_Look.unity
     guid: 90e2f073033912e4dbf10eca16b1f786
   m_configObjects: {}
