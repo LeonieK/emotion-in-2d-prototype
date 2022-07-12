@@ -282,7 +282,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1395785548}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DatabaseCommunication, Assembly-CSharp
         m_MethodName: SaveDataBtn
         m_Mode: 1
@@ -609,12 +609,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player:
     id: 1
-    age: 15
-    gender: 119
-    experience: 5
-    deviceInfo: Device01
-    ishiharaData: 070000000900000005000000070000000a00000028000000090000000a0000000a0000000a0000000a000000
-    ishiharaResult: 100
+    age: 0
+    gender: 0
+    experience: 0
+    deviceInfo: 
+    ishiharaData: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+    ishiharaResult: 0
+    samresults: []
 --- !u!1 &1468627463
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,10 +664,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1600, y: 900}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
