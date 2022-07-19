@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class NPCDialogue : MonoBehaviour
 {
@@ -11,8 +12,9 @@ public class NPCDialogue : MonoBehaviour
     private int index;
     [SerializeField] private float wordSpeed;
     //private bool playerIsClose;
-    [SerializeField] private GameObject interactButton;
+    [SerializeField] private GameObject talkButton;
     [SerializeField] private GameObject continueButton;
+    [SerializeField] private GameObject player;
     // Update is called once per frame
     void Update()
     {
@@ -47,21 +49,32 @@ public class NPCDialogue : MonoBehaviour
             StartCoroutine(Typing());
         } else{
             zeroText();
+            PlayerPrefs.SetFloat("playerPosx",player.transform.position.x);
+            PlayerPrefs.SetFloat("playerPosy",player.transform.position.y);
+            PlayerPrefs.SetFloat("playerPosz",player.transform.position.z);
+            PlayerPrefs.SetInt("openDoor", 1);
+            PlayerPrefs.Save();
+            changeScene();
         }
+    }
+
+    public void changeScene()
+    {
+        SceneManager.LoadScene("IshiharaQuestionnaire");
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Player"))
         {
             //playerIsClose = true;
-            interactButton.SetActive(true);
+            talkButton.SetActive(true);
         }
     }
     private void OnTriggerExit2D(Collider2D other) {
         if(other.CompareTag("Player"))
         {
             //playerIsClose = false;
-            interactButton.SetActive(false);
+            talkButton.SetActive(false);
             zeroText();
         }
     }
@@ -74,6 +87,10 @@ public class NPCDialogue : MonoBehaviour
             dialoguePanel.SetActive(true);
             StartCoroutine(Typing());
         }
+    }
+    public void flip()
+    {
+        transform.localScale = new Vector3(1,1,1);
     }
 
 }

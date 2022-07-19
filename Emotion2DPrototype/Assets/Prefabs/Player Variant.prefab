@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2250246842083929232, guid: 651bde3c063386c48afe1afabe8d432f, type: 3}
+      propertyPath: m_JumpForce
+      value: 750
+      objectReference: {fileID: 0}
     - target: {fileID: 2250246842083929233, guid: 651bde3c063386c48afe1afabe8d432f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -91,7 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e890301b800e97d46ab2edfc55f0c0d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPosition: {fileID: 0}
+  invincibilityDurationSeconds: 3
+  invincibilityDeltaTime: 0.15
   hearts:
   - {fileID: 0}
   - {fileID: 0}

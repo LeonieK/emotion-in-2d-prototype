@@ -26,6 +26,7 @@ TagManager:
   - Collectible
   - Obstacle
   - Enemy
+  - dontChange
   layers:
   - Default
   - TransparentFX
@@ -69,6 +70,12 @@ TagManager:
   - name: Midground
     uniqueID: 3858054169
     locked: 0
+  - name: Decoration
+    uniqueID: 1162433477
+    locked: 0
+  - name: Item
+    uniqueID: 2435118907
+    locked: 0
   - name: Solid
     uniqueID: 79072019
     locked: 0
@@ -80,6 +87,9 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 602204813
+    locked: 0
+  - name: NPC
+    uniqueID: 1646226705
     locked: 0
   - name: UI
     uniqueID: 1325961349

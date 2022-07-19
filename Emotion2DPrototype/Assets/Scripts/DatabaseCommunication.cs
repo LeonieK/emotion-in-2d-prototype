@@ -8,10 +8,12 @@ using UnityEngine.UI;
 using System.IO;
 using System;
 
+/**
+ This class is responsible to collect all data and send it to the database.
+**/
 public class DatabaseCommunication : MonoBehaviour
 {
-    private string url = "http://survey1.emotionin2d.de/saveData.php";
-    private long playerID;
+    private string url = "https://survey1.emotionin2d.de/saveData.php";
     private char gender;
     private int age;
     private int experience;
@@ -30,18 +32,28 @@ public class DatabaseCommunication : MonoBehaviour
         public int lvl;
     }
 
-    private void Start() 
+    public void submitButtonPressed()
     {
         setGenearlQuestionsData();
         setIshiharaData();
+        setSAMData();
+        //Post Data to Database
         StartCoroutine(postData(url));
     }
 
     IEnumerator postData(string url)
     {
+        string id = "";
+        if(PlayerPrefs.HasKey("id"))
+        {
+            id = PlayerPrefs.GetString("id");
+        } else 
+        {
+            Debug.LogError("There is no save data!");
+        }
         
         WWWForm form = new WWWForm();
-        form.AddField("idPOST", playerID.ToString());
+        form.AddField("idPOST", id);
         form.AddField("genderPOST", gender);
         form.AddField("agePOST", age);
         form.AddField("experiencePOST", experience);
@@ -77,7 +89,6 @@ public class DatabaseCommunication : MonoBehaviour
     }
 
     public void setGenearlQuestionsData(){
-        playerID = DateTimeOffset.Now.ToUnixTimeMilliseconds();
         deviceInfo = SystemInfo.deviceModel;
         string originPath = Application.persistentDataPath +"/GeneralData.csv";
         StreamReader streamReader = new StreamReader(originPath);
@@ -97,26 +108,26 @@ public class DatabaseCommunication : MonoBehaviour
             if(tempCount == 1)
             {
                 //Save To player 
-                if(dataValues[2].Equals("Keine Angabe") && dataValues[3].Equals("Keine Angabe"))
+                if(dataValues[1].Equals("Keine Angabe") && dataValues[2].Equals("Keine Angabe"))
                 {
                     age = 0;
-                    gender = 'n';
-                    experience = int.Parse(dataValues[4]);
-                } else if (dataValues[3].Equals("Keine Angabe"))
-                {
-                    age = int.Parse(dataValues[2]);
                     gender = 'n';
                     experience = int.Parse(dataValues[4]);
                 } else if (dataValues[2].Equals("Keine Angabe"))
                 {
-                    age = 0;
-                    gender = dataValues[3].ToCharArray()[0];
+                    age = int.Parse(dataValues[2]);
+                    gender = 'n';
                     experience = int.Parse(dataValues[4]);
+                } else if (dataValues[1].Equals("Keine Angabe"))
+                {
+                    age = 0;
+                    gender = dataValues[2].ToCharArray()[0];
+                    experience = int.Parse(dataValues[3]);
                 } else
                 {
-                    age = int.Parse(dataValues[2]);
-                    gender = dataValues[3].ToCharArray()[0];
-                    experience = int.Parse(dataValues[4]);
+                    age = int.Parse(dataValues[1]);
+                    gender = dataValues[2].ToCharArray()[0];
+                    experience = int.Parse(dataValues[3]);
                 }
             }
             tempCount++;
@@ -202,5 +213,10 @@ public class DatabaseCommunication : MonoBehaviour
         {
             return 'n';
         } 
+    }
+
+    public void setSAMData()
+    {
+        //ToDo set Sam Data
     }
 }
