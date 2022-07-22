@@ -443,7 +443,7 @@
     },
     "m_Name": "Satuation",
     "m_DefaultReferenceName": "Vector1_2520b93cb85e4b42a4a741e85506d41b",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "_Saturation",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,

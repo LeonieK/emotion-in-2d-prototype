@@ -27,6 +27,8 @@ TagManager:
   - Obstacle
   - Enemy
   - dontChange
+  - BackgroundLight
+  - EnvironmentLight
   layers:
   - Default
   - TransparentFX

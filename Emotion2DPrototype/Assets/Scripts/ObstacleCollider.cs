@@ -8,6 +8,7 @@ public class ObstacleCollider : MonoBehaviour
 {
     [SerializeField] private float invincibilityDurationSeconds = 3f;
     [SerializeField] private float invincibilityDeltaTime = 0.15f;
+    [SerializeField] private GameObject startingPoint;
     private Animator anim;
     private bool isInvincible = false;
     private Rigidbody2D rb;
@@ -35,8 +36,10 @@ public class ObstacleCollider : MonoBehaviour
                 StartCoroutine(GetInvulnerable());
             } else if (life <= 1 && !isInvincible){
                 hearts[0].gameObject.GetComponent<Animator>().SetTrigger("destroy");
-                Destroy(hearts[0].gameObject, 0.7f);
+                //Destroy(hearts[0].gameObject, 0.7f);
+                hearts[0].gameObject.SetActive(false);
                 Die();
+                RestartLevel();
             }
             
         } else if (other.gameObject.CompareTag("Enemy")){
@@ -45,11 +48,14 @@ public class ObstacleCollider : MonoBehaviour
                 //transform.position = new Vector2(other.transform.position.x, other.transform.position.y);
                 StartCoroutine(GetInvulnerable());
             } else if (life <= 1 && !isInvincible){
-                hearts[0].gameObject.GetComponent<Animator>().SetTrigger("destroy");
-                Destroy(hearts[0].gameObject, 0.7f);
+                hearts[life].gameObject.GetComponent<Animator>().SetTrigger("destroy");
+                //Destroy(hearts[0].gameObject, 0.7f);
+                hearts[0].gameObject.SetActive(false);
                 Die();
+                RestartLevel();
             }
         }
+        //life--;
     }
 
     IEnumerator GetInvulnerable(){
@@ -72,15 +78,22 @@ public class ObstacleCollider : MonoBehaviour
 
     private void RestartLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        for(int i = 0; i < hearts.Length; i++)
+        {
+            hearts[i].gameObject.SetActive(true);
+        }
+        life = hearts.Length;
+        transform.position = new Vector3(startingPoint.transform.position.x, startingPoint.transform.position.y, startingPoint.transform.position.z);
+        anim.SetTrigger("normal");
     }
 
     public void TakeDamage(int damage)
     {
         life -= damage;
         hearts[life].gameObject.GetComponent<Animator>().SetTrigger("destroy");
-        Destroy(hearts[life].gameObject, 0.7f);
-        
+        //Destroy(hearts[life].gameObject, 0.7f);
+        hearts[life].gameObject.SetActive(false);
     }
 
 }

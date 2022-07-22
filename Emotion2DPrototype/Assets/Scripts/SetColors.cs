@@ -5,9 +5,8 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class SetColors : MonoBehaviour
 {
-    // Start is called before the first frame update
-    [SerializeField] private int nrOfLights;
     Dictionary<string, Color32> colors = new Dictionary<string, Color32>();
+    [SerializeField] Material material;
     void Start()
     {
         //initialize color values
@@ -41,9 +40,15 @@ public class SetColors : MonoBehaviour
         var lights = FindObjectsOfType<Light2D>();
         for(int i = 0; i < lights.Length; i++)
         {
-            if(!lights[i].CompareTag("dontChange"))
+            if(lights[i].CompareTag("BackgroundLight"))
             {
                 lights[i].GetComponent<Light2D>().color = color;
+            } else if(lights[i].CompareTag("EnvironmentLight") )
+            {
+                lights[i].GetComponent<Light2D>().color = color;
+            } else if(!lights[i].CompareTag("dontChange"))
+            {
+                //Don't change
             }
         }
     }
@@ -56,15 +61,23 @@ public class SetColors : MonoBehaviour
         int randomNumber = Random.Range(0,colorValues.Length-1);
         colorString.Replace(colorValues[randomNumber]+",", "");
         PlayerPrefs.SetString("color", colorString);
-        PlayerPrefs.Save();
+        
         Debug.Log("Color Values:" + colorValues[randomNumber]);
         
         if (colorValues[randomNumber].Equals("n1") || colorValues[randomNumber].Equals("n0")){
             string temp = colorValues[randomNumber] +"0";
+            PlayerPrefs.SetString("currentColor", temp);
+            PlayerPrefs.Save();
+            Debug.Log("Set Saturation: " + material.GetFloat("_Saturation").ToString() + "to 0");
+            material.SetFloat("_Saturation", 0f);
             return colors[temp];
         } else 
         {
-            string temp = h + "," + colorValues[randomNumber]; 
+            string temp = h + "," + colorValues[randomNumber];
+            PlayerPrefs.SetString("currentColor", h + colorValues[randomNumber]); 
+            PlayerPrefs.Save();
+            Debug.Log("Set Saturation: " + material.GetFloat("_Saturation").ToString() + "to 1");
+            material.SetFloat("_Saturation", 1f);
             return colors[temp];
         }
         

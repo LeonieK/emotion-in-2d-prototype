@@ -49,9 +49,6 @@ public class NPCDialogue : MonoBehaviour
             StartCoroutine(Typing());
         } else{
             zeroText();
-            PlayerPrefs.SetFloat("playerPosx",player.transform.position.x);
-            PlayerPrefs.SetFloat("playerPosy",player.transform.position.y);
-            PlayerPrefs.SetFloat("playerPosz",player.transform.position.z);
             PlayerPrefs.SetInt("openDoor", 1);
             PlayerPrefs.Save();
             changeScene();
@@ -60,20 +57,18 @@ public class NPCDialogue : MonoBehaviour
 
     public void changeScene()
     {
-        SceneManager.LoadScene("IshiharaQuestionnaire");
+        SceneManager.LoadScene("GeneralandIshiharaQuestionnaire");
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Player"))
         {
-            //playerIsClose = true;
             talkButton.SetActive(true);
         }
     }
     private void OnTriggerExit2D(Collider2D other) {
         if(other.CompareTag("Player"))
         {
-            //playerIsClose = false;
             talkButton.SetActive(false);
             zeroText();
         }

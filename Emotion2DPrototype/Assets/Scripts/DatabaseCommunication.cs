@@ -6,7 +6,6 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 using System.IO;
-using System;
 
 /**
  This class is responsible to collect all data and send it to the database.
@@ -14,15 +13,16 @@ using System;
 public class DatabaseCommunication : MonoBehaviour
 {
     private string url = "https://survey1.emotionin2d.de/saveData.php";
+    [SerializeField] private InputField feedbackField;
     private char gender;
     private int age;
     private int experience;
     private string deviceInfo;
     private int[] ishiharaData = new int[10];
     private char ishiharaResult;
-    private SAMResult[] samresults;
+    public List<SAMResult> samresults = new List<SAMResult>();
     
-    private class SAMResult {
+    public class SAMResult {
         public char hue;
         public int saturation;
         public int brightness;
@@ -30,19 +30,35 @@ public class DatabaseCommunication : MonoBehaviour
         public int valence;
         public int dominance;
         public int lvl;
+
+        public SAMResult(char hue, int brightness, int saturation, int arousal, int valence, int dominance, int lvl)
+        {
+            this.hue = hue;
+            this.saturation = saturation;
+            this.brightness = brightness;
+            this.arousal = arousal;
+            this.valence = valence;
+            this.dominance = dominance;
+            this.lvl = lvl;
+        }
+        public string toString()
+        {
+            return "Hue: " + this.hue.ToString() + " // Brightness: " + this.brightness.ToString()+ " // SaturatioN: " + this.saturation.ToString()
+                + " // Arousal: " + this.arousal.ToString() + " // Valence: " + this.valence.ToString() + " // Dominance: " + this.dominance.ToString() + " // LVL: " + this.lvl.ToString();
+        }
     }
 
     public void submitButtonPressed()
     {
-        setGenearlQuestionsData();
-        setIshiharaData();
-        setSAMData();
         //Post Data to Database
         StartCoroutine(postData(url));
     }
 
     IEnumerator postData(string url)
     {
+        setGenearlQuestionsData();
+        setIshiharaData();
+        setSAMData();
         string id = "";
         if(PlayerPrefs.HasKey("id"))
         {
@@ -65,14 +81,15 @@ public class DatabaseCommunication : MonoBehaviour
 
         form.AddField("ishiharaResultPOST", ishiharaResult);
 
-        /*for(int j = 0; j < samresults.Length; j++)
+        for(int j = 0; j < samresults.Count; j++)
         {
-            form.AddField("samCollection"+(j+1)+"POST", samresults[j].hue + ","
-                + samresults[j].saturation + "," + samresults[j].brightness +"," 
-                + samresults[j].arousal + "," + samresults[j].valence + ","
-                + samresults[j].dominance + "," + samresults[j].lvl);
-        }*/
-
+            form.AddField("samCollection"+(j+1)+"POST", (samresults[j].hue.ToString() + ","
+                + samresults[j].saturation.ToString() + "," + samresults[j].brightness.ToString() +"," 
+                + samresults[j].arousal.ToString() + "," + samresults[j].valence.ToString() + ","
+                + samresults[j].dominance.ToString() + "," + samresults[j].lvl.ToString()));
+        }
+        form.AddField("feedbackPOST",feedbackField.text);
+    
         UnityWebRequest www = UnityWebRequest.Post(url, form);
 
         //Send the request then wait here until it returns
@@ -132,8 +149,6 @@ public class DatabaseCommunication : MonoBehaviour
             }
             tempCount++;
         }
-        //Remove File to Clean up Space
-        //File.Delete(Application.persistentDataPath +"/GeneralData.csv");
     }
 
     public void setIshiharaData()
@@ -157,21 +172,18 @@ public class DatabaseCommunication : MonoBehaviour
             if(tempCount == 1)
             {
                 for(int i = 0; i < ishiharaData.Length; i++){
-                    Debug.Log("Data" +i +int.Parse(dataValues1[i+1]));
                     ishiharaData[i] = int.Parse(dataValues1[i+1]);
                 }
                 ishiharaResult = calculateScore(dataValues1);
             }
             tempCount++;
         }
-        //Remove File to Clean up Space
-        //File.Delete(Application.persistentDataPath +"/Ishihara.csv");
+        
     }
 
     private char calculateScore(string[] data)
     {
         int score = 0;
-        Debug.Log("Length; " + data.Length.ToString());
         //calculate score
         if (data[1].Equals("12")){
             score++;
@@ -218,5 +230,34 @@ public class DatabaseCommunication : MonoBehaviour
     public void setSAMData()
     {
         //ToDo set Sam Data
+        string originPath = Application.persistentDataPath +"/SAM.csv";
+        StreamReader streamReader = new StreamReader(originPath);
+        bool endOfFile = false;
+        int tempCount = 0;
+
+        while(!endOfFile)
+        {
+            string dataString = streamReader.ReadLine();
+            if(dataString == null)
+            {
+                endOfFile = true;
+                break;
+            }
+            if(tempCount > 0)
+            {
+                dataString = dataString.Replace('"'.ToString(), "");
+                var dataValues = dataString.Split(',');
+                //Debug.Log("Hue: " + dataValues[4] + " // Brightness: " + dataValues[4]+ " // SaturatioN: " + dataValues[4]
+                //+ " // Arousal: " + dataValues[1] + " // Valence: " + dataValues[2] + " // Dominance: " + dataValues[3] + " // LVL: " + dataValues[5]);
+                
+                var hsb = dataValues[4].ToCharArray();
+
+                SAMResult result = new SAMResult(hsb[0],(hsb[1]-'0'),(hsb[2]-'0'),
+                int.Parse(dataValues[1]),int.Parse(dataValues[2]),int.Parse(dataValues[3]),int.Parse(dataValues[5]));
+                samresults.Add(result);
+            }
+            tempCount++;
+
+        }
     }
 }

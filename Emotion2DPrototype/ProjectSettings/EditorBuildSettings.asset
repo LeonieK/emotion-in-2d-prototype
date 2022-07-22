@@ -6,15 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/Menues_UI/MainMenu.unity
     guid: 6831384c88bc6324a89e264a95451f7f
   - enabled: 1
-    path: Assets/Scenes/01_Intro_Lvl.unity
+    path: Assets/Scenes/Z_OLD/01_Intro_Lvl.unity
     guid: c8cd4b770a2836242a9e3a262f22c961
   - enabled: 1
-    path: Assets/Scenes/IshiharaQuestionnaire.unity
-    guid: 8241c69cdc0db5649816adcd6819be44
+    path: Assets/Scenes/Questionnaires/GeneralandIshiharaQuestionnaire.unity
+    guid: 9407a11adca588247b754fc628c8d356
   - enabled: 1
-    path: Assets/Scenes/GeneralQuestionnaire.unity
-    guid: 98f70405d37d08f41adb2fb747358d98
+    path: Assets/Scenes/NPCThankYou.unity
+    guid: 41202c6b966e79446aceefdd6c3619bb
+  - enabled: 1
+    path: Assets/Scenes/01_Intro_Lvl_2Test.unity
+    guid: b99f70682bb2fa845a1b9c09e2f4d006
+  - enabled: 1
+    path: Assets/Scenes/Questionnaires/SAM_Questionnaire.unity
+    guid: 82f1511a8acd66e439946cf982832b3b
+  - enabled: 1
+    path: Assets/Scenes/Menues_UI/Outro.unity
+    guid: d955b93543d1f794a999eb05d22357d5
+  - enabled: 1
+    path: Assets/Scenes/Menues_UI/ThankYOU.unity
+    guid: 2f968c19ee2ba2f439bb78f29037735b
   m_configObjects: {}
