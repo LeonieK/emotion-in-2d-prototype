@@ -546,8 +546,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Danke f\xFCr deine Hilfe. \nIch setze dich direkt im n\xE4chsten Level
-    ab!"
+  m_Text: "Danke f\xFCr deine Offenheit. "
 --- !u!222 &831918195
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Menues_UI/MainMenu.unity
     guid: 6831384c88bc6324a89e264a95451f7f
   - enabled: 1
-    path: Assets/Scenes/Z_OLD/01_Intro_Lvl.unity
-    guid: c8cd4b770a2836242a9e3a262f22c961
+    path: Assets/Scenes/00_LvL_Intro.unity
+    guid: 118d3834503cee145a6462d53166f923
   - enabled: 1
     path: Assets/Scenes/Questionnaires/GeneralandIshiharaQuestionnaire.unity
     guid: 9407a11adca588247b754fc628c8d356
@@ -18,8 +18,11 @@ EditorBuildSettings:
     path: Assets/Scenes/NPCThankYou.unity
     guid: 41202c6b966e79446aceefdd6c3619bb
   - enabled: 1
-    path: Assets/Scenes/01_Intro_Lvl_2Test.unity
-    guid: b99f70682bb2fa845a1b9c09e2f4d006
+    path: Assets/Scenes/99_InbetweenLvL.unity
+    guid: 591dd7d7ec785e849b09da1a6dcf1c42
+  - enabled: 1
+    path: Assets/Scenes/01_LvL.unity
+    guid: 230f96f0d4210714a8c1c78ab5ac04cf
   - enabled: 1
     path: Assets/Scenes/Questionnaires/SAM_Questionnaire.unity
     guid: 82f1511a8acd66e439946cf982832b3b

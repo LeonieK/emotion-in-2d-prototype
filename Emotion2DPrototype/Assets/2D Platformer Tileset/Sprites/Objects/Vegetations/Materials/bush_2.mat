@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NeutralColors
+  m_Name: bush_2
   m_Shader: {fileID: -6465566751694194690, guid: d6430cfecfd0a5548b4f1a2a2f1366f7, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 8246ff9a469676647a4cf27a17623213, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -36,8 +36,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_2520b93cb85e4b42a4a741e85506d41b: 1
     - _Saturation: 0
     m_Colors:
-    - Color_93d92221891b4ea380161f8b6e82365e: {r: 0, g: 0, b: 0, a: 1}
+    - Color_93d92221891b4ea380161f8b6e82365e: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

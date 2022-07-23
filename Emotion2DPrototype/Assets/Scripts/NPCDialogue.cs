@@ -11,11 +11,10 @@ public class NPCDialogue : MonoBehaviour
     [SerializeField] private string[] dialogue;
     private int index;
     [SerializeField] private float wordSpeed;
-    //private bool playerIsClose;
     [SerializeField] private GameObject talkButton;
     [SerializeField] private GameObject continueButton;
     [SerializeField] private GameObject player;
-    // Update is called once per frame
+   
     void Update()
     {
         if(dialogueText.text == dialogue[index])
@@ -57,7 +56,7 @@ public class NPCDialogue : MonoBehaviour
 
     public void changeScene()
     {
-        SceneManager.LoadScene("GeneralandIshiharaQuestionnaire");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

@@ -10,7 +10,11 @@ public class DoorBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        script = GameObject.Find("NPC").GetComponent<NPCDialogue>();
+        if(GameObject.Find("NPC")){
+             PlayerPrefs.SetInt("openDoor", 0);
+            PlayerPrefs.Save();
+            script = GameObject.Find("NPC").GetComponent<NPCDialogue>();
+        }
     }
 
 
