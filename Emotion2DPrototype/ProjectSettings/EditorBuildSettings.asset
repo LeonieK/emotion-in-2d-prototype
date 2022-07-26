@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menues_UI/Welcome.unity
+    guid: 21d5d10d666fd694c80dce1487436526
+  - enabled: 1
     path: Assets/Scenes/Menues_UI/MainMenu.unity
     guid: 6831384c88bc6324a89e264a95451f7f
   - enabled: 1
@@ -26,6 +29,63 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Questionnaires/SAM_Questionnaire.unity
     guid: 82f1511a8acd66e439946cf982832b3b
+  - enabled: 1
+    path: Assets/Scenes/99_InbetweenLvL2.unity
+    guid: 5fe875e2cccd34e45b2cf1678daf3ae8
+  - enabled: 1
+    path: Assets/Scenes/02_LvL.unity
+    guid: b7bf46508cc442d479c36c1be05089fd
+  - enabled: 1
+    path: Assets/Scenes/Questionnaires/SAM_Questionnaire2.unity
+    guid: ec7daa4464109e942a94b3ddffe597a7
+  - enabled: 1
+    path: Assets/Scenes/NPCThankYou_lvl2.unity
+    guid: aaed3186d3ed9e24dae05c5b60ec8d16
+  - enabled: 1
+    path: Assets/Scenes/99_InbetweenLvL3.unity
+    guid: 8b79df20eeaeb2048b850da538613b1d
+  - enabled: 1
+    path: Assets/Scenes/03_LvL.unity
+    guid: b24a0e06c2b5a2b4d99cdae0b64b5da7
+  - enabled: 1
+    path: Assets/Scenes/Questionnaires/SAM_Questionnaire3.unity
+    guid: db151920bd285f241a1e7f9d839a2bee
+  - enabled: 1
+    path: Assets/Scenes/NPCThankYou_lvl3.unity
+    guid: c869d8be106f68c478598e668641d9e8
+  - enabled: 1
+    path: Assets/Scenes/99_InbetweenLvL4.unity
+    guid: a78f92fb2f8883944994fc28e24b70f3
+  - enabled: 1
+    path: Assets/Scenes/04_LvL.unity
+    guid: 9e713fa201bdd504ba6aec7fa3af3a91
+  - enabled: 1
+    path: Assets/Scenes/Questionnaires/SAM_Questionnaire4.unity
+    guid: 2a9adba4fbba35745b511760107219cb
+  - enabled: 1
+    path: Assets/Scenes/NPCThankYou_lvl4.unity
+    guid: be88e54e6fe860348b1ec9a72777a904
+  - enabled: 1
+    path: Assets/Scenes/99_InbetweenLvL5.unity
+    guid: b7287ae4416a1814cbbc935ac085e398
+  - enabled: 1
+    path: Assets/Scenes/05_LvL.unity
+    guid: c44b7dc3bdc11594a81ad0baf0013bca
+  - enabled: 1
+    path: Assets/Scenes/Questionnaires/SAM_Questionnaire5.unity
+    guid: c752aeeaba5ad7f4bb190af254b5b336
+  - enabled: 1
+    path: Assets/Scenes/NPCThankYou_lvl5.unity
+    guid: 29bc9edc8fc1a434a97278cf125fa82f
+  - enabled: 1
+    path: Assets/Scenes/99_InbetweenLvL6.unity
+    guid: ea78960dcfe5af44d9702665e1b63b07
+  - enabled: 1
+    path: Assets/Scenes/06_LvL_Copylvl1.unity
+    guid: 8d3284fee22d6df4da145d106d9493d6
+  - enabled: 1
+    path: Assets/Scenes/Questionnaires/SAM_Questionnaire6.unity
+    guid: 3e5e902bb4d17b24e8a546b129f31159
   - enabled: 1
     path: Assets/Scenes/Menues_UI/Outro.unity
     guid: d955b93543d1f794a999eb05d22357d5

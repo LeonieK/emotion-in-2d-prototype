@@ -807,7 +807,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191976527}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -45.6, y: 1.3100003, z: -20}
+  m_LocalPosition: {x: -41.59, y: 0.110000014, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2846,11 +2846,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 785127789}
   dialogueText: {fileID: 785127788}
-  dialogue:
-  - Bevor du weiter gehen kannst brauche ich noch deine Hilfe.
-  - Ich habe ein paar Fragen an dich...
-  - ... und ein paar Bilder auf denen ich die Zahlen nicht mehr erkennen kann.
-  - Kannst du mir die Fragen beantworten und die Zahlen nennen?
+  dialogueEnoughCoins:
+  - "Ich brauche 10 M\xFCnzen von dir, damit du weiter gehen kannst."
+  - ...
+  - "So wie es aussieht hast du gen\xFCgend M\xFCnzen dabei."
+  - "(Du \xFCbergibst die M\xFCnzen)"
+  - Bevor du weiter gehst...
+  - Kannst du mir berichten, wie deine Reise hierher war?
+  dialogueNotEnoughCoins:
+  - "Ich brauche 10 M\xFCnzen von dir, damit du weiter kannst."
+  - ...
+  - "So wie es aussieht hast du nicht gen\xFCgend M\xFCnzen dabei."
+  - "Vielleicht findest du ja noch welche, wenn du den Weg zur\xFCck gehst."
+  coinNr: 10
   wordSpeed: 0.02
   talkButton: {fileID: 1561401588}
   continueButton: {fileID: 751550009}
@@ -5227,17 +5235,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: CM vcam1
       objectReference: {fileID: 0}
+    - target: {fileID: 6761527241024550704, guid: 3c4ca3506c7bbf442afe5784ac440f55, type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 8960924239283738753}
     - target: {fileID: 6761527241024550705, guid: 3c4ca3506c7bbf442afe5784ac440f55, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6761527241024550705, guid: 3c4ca3506c7bbf442afe5784ac440f55, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -45.6
+      value: -41.59
       objectReference: {fileID: 0}
     - target: {fileID: 6761527241024550705, guid: 3c4ca3506c7bbf442afe5784ac440f55, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.3100003
+      value: 0.110000014
       objectReference: {fileID: 0}
     - target: {fileID: 6761527241024550705, guid: 3c4ca3506c7bbf442afe5784ac440f55, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8716,5 +8728,10 @@ PrefabInstance:
 --- !u!1 &8960924239283738752 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8960924238260893205, guid: 3fe403222df65ae4d9bf4a6342d97fff, type: 3}
+  m_PrefabInstance: {fileID: 8960924239283738751}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8960924239283738753 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8960924238260893200, guid: 3fe403222df65ae4d9bf4a6342d97fff, type: 3}
   m_PrefabInstance: {fileID: 8960924239283738751}
   m_PrefabAsset: {fileID: 0}

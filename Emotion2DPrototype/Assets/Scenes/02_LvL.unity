@@ -20452,9 +20452,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 785127789}
   dialogueText: {fileID: 785127788}
-  dialogue:
-  - 
-  - 
+  dialogueEnoughCoins:
+  - "Ich brauche 10 M\xFCnzen von dir, damit du weiter gehen kannst."
+  - ...
+  - "So wie es aussieht hast du gen\xFCgend M\xFCnzen dabei."
+  - Ich nehme sie aus deiner Tasche.
+  - ...
+  - Bevor du weiter gehst...
+  - Kannst du mir berichten, wie deine Reise hierher war?
+  dialogueNotEnoughCoins:
+  - "Ich brauche 10 M\xFCnzen von dir, damit du weiter gehen kannst."
+  - ...
+  - "So wie es aussieht hast du gen\xFCgend M\xFCnzen dabei."
+  - Schaue doch auf dem Weg hierher ob du noch welche finden kannst.
+  coinNr: 10
   wordSpeed: 0.02
   talkButton: {fileID: 1561401588}
   continueButton: {fileID: 751550009}
@@ -22040,6 +22051,10 @@ PrefabInstance:
     - target: {fileID: 1307710841750108755, guid: 21cff653b17592e47a9cee22577691aa, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945322583423097384, guid: 21cff653b17592e47a9cee22577691aa, type: 3}
+      propertyPath: m_Text
+      value: / 16
       objectReference: {fileID: 0}
     - target: {fileID: 3910564568300015997, guid: 21cff653b17592e47a9cee22577691aa, type: 3}
       propertyPath: m_IsActive

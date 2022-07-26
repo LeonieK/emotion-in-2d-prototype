@@ -745,7 +745,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191976527}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -41.59, y: 0.110000014, z: -20}
+  m_LocalPosition: {x: 73.4, y: -3.46, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9570,11 +9570,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 785127789}
   dialogueText: {fileID: 785127788}
-  dialogue:
-  - Bevor du weiter gehen kannst brauche ich noch deine Hilfe.
-  - Ich habe ein paar Fragen an dich...
+  dialogueEnoughCoins:
+  - "Du musst mir bevor du weiter gehst 5 M\xFCnzen geben."
+  - ...
+  - "Es sieht so aus als h\xE4ttest du gen\xFCgend M\xFCnzen dabei."
+  - "(Du \xFCbergibst die M\xFCnzen)"
+  - Bevor du weiter gehst brauche ich aber noch deine Hilfe.
+  - Ich habe Fragen an dich...
   - ... und ein paar Bilder auf denen ich die Zahlen nicht mehr erkennen kann.
   - Kannst du mir die Fragen beantworten und die Zahlen nennen?
+  dialogueNotEnoughCoins:
+  - "Bevor du weiter gehst, musst du mir 5 M\xFCnzen geben."
+  - ...
+  - "Du hast nicht gen\xFCgend M\xFCnzen dabei. "
+  - Schaue doch auf dem Weg hierher nochmal, ob du noch welche findest.
+  coinNr: 5
   wordSpeed: 0.02
   talkButton: {fileID: 1561401588}
   continueButton: {fileID: 751550009}
@@ -11550,6 +11560,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2945322583423097384, guid: 21cff653b17592e47a9cee22577691aa, type: 3}
+      propertyPath: m_Text
+      value: / 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945322583423097384, guid: 21cff653b17592e47a9cee22577691aa, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945322583423097384, guid: 21cff653b17592e47a9cee22577691aa, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945322583423097384, guid: 21cff653b17592e47a9cee22577691aa, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3910564568300015997, guid: 21cff653b17592e47a9cee22577691aa, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -11793,6 +11819,10 @@ PrefabInstance:
     - target: {fileID: 8332854842031684457, guid: 21cff653b17592e47a9cee22577691aa, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332854842282585641, guid: 21cff653b17592e47a9cee22577691aa, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8438337185026085266, guid: 21cff653b17592e47a9cee22577691aa, type: 3}
       propertyPath: m_IsActive
@@ -12147,11 +12177,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6761527241024550705, guid: 3c4ca3506c7bbf442afe5784ac440f55, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -41.59
+      value: 73.4
       objectReference: {fileID: 0}
     - target: {fileID: 6761527241024550705, guid: 3c4ca3506c7bbf442afe5784ac440f55, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.110000014
+      value: -3.46
       objectReference: {fileID: 0}
     - target: {fileID: 6761527241024550705, guid: 3c4ca3506c7bbf442afe5784ac440f55, type: 3}
       propertyPath: m_LocalPosition.z
@@ -23654,9 +23684,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 575208367, guid: 3fe403222df65ae4d9bf4a6342d97fff, type: 3}
+      propertyPath: max
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 575208367, guid: 3fe403222df65ae4d9bf4a6342d97fff, type: 3}
       propertyPath: collectibleText
       value: 
       objectReference: {fileID: 321365922}
+    - target: {fileID: 575208367, guid: 3fe403222df65ae4d9bf4a6342d97fff, type: 3}
+      propertyPath: collectibleTextMax
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 575208368, guid: 3fe403222df65ae4d9bf4a6342d97fff, type: 3}
       propertyPath: startingPoint
       value: 
@@ -23695,11 +23733,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8960924238260893200, guid: 3fe403222df65ae4d9bf4a6342d97fff, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -41.59
+      value: 73.4
       objectReference: {fileID: 0}
     - target: {fileID: 8960924238260893200, guid: 3fe403222df65ae4d9bf4a6342d97fff, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.14
+      value: -2.43
       objectReference: {fileID: 0}
     - target: {fileID: 8960924238260893200, guid: 3fe403222df65ae4d9bf4a6342d97fff, type: 3}
       propertyPath: m_LocalPosition.z

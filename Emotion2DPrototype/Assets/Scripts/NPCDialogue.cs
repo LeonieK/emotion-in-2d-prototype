@@ -8,31 +8,45 @@ public class NPCDialogue : MonoBehaviour
 {
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private Text dialogueText;
-    [SerializeField] private string[] dialogue;
+    [SerializeField] private string[] dialogueEnoughCoins;
+    [SerializeField] private string[] dialogueNotEnoughCoins;
+    [SerializeField] private int coinNr;
     private int index;
     [SerializeField] private float wordSpeed;
     [SerializeField] private GameObject talkButton;
     [SerializeField] private GameObject continueButton;
     [SerializeField] private GameObject player;
-   
+
     void Update()
     {
-        if(dialogueText.text == dialogue[index])
+        if(PlayerPrefs.GetInt("coins") >= coinNr && dialogueText.text == dialogueEnoughCoins[index])
         {
-            continueButton.SetActive(true);
+                continueButton.SetActive(true);
         }
+        if(PlayerPrefs.GetInt("coins") < coinNr && dialogueText.text == dialogueNotEnoughCoins[index])
+        {
+                continueButton.SetActive(true);
+        }
+        
     }
     
     public void zeroText()
     {
         dialogueText.text = "";
-        index = 0;
+        index= 0;
         dialoguePanel.SetActive(false);
     }
-
-    IEnumerator Typing()
+    IEnumerator TypingEnough()
     {
-        foreach(char letter in dialogue[index].ToCharArray())
+        foreach(char letter in dialogueEnoughCoins[index].ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(wordSpeed);
+        }
+    }
+    IEnumerator TypingNotEnough()
+    {
+        foreach(char letter in dialogueNotEnoughCoins[index].ToCharArray())
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(wordSpeed);
@@ -41,16 +55,34 @@ public class NPCDialogue : MonoBehaviour
     public void NextLine()
     {
         continueButton.SetActive(false);
-        if(index < dialogue.Length-1)
+        if(PlayerPrefs.GetInt("coins") >= coinNr)
         {
-            index++;
-            dialogueText.text = "";
-            StartCoroutine(Typing());
-        } else{
-            zeroText();
-            PlayerPrefs.SetInt("openDoor", 1);
-            PlayerPrefs.Save();
-            changeScene();
+            if(index < dialogueEnoughCoins.Length-1)
+            {
+                dialogueText.text = "";
+                index++;
+                StartCoroutine(TypingEnough());
+            } else 
+            {
+                player.GetComponent<PlayerMovement>().canMove = true;
+                zeroText();
+                PlayerPrefs.SetInt("openDoor", 1);
+                PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins")-coinNr);
+                PlayerPrefs.Save();
+                changeScene();
+            }
+        }else
+        {
+            if(index < dialogueNotEnoughCoins.Length-1)
+            {
+                dialogueText.text = "";
+                index++;
+                StartCoroutine(TypingNotEnough());
+            }else 
+            {
+                player.GetComponent<PlayerMovement>().canMove = true;
+                zeroText();
+            }
         }
     }
 
@@ -79,7 +111,17 @@ public class NPCDialogue : MonoBehaviour
         }else
         {
             dialoguePanel.SetActive(true);
-            StartCoroutine(Typing());
+            //disable movement
+            player.GetComponent<PlayerMovement>().canMove = false;
+            if(PlayerPrefs.GetInt("coins")>=coinNr)
+            {
+                StartCoroutine(TypingEnough());
+            }
+            else 
+            {
+                StartCoroutine(TypingNotEnough());
+            }
+           
         }
     }
     public void flip()
