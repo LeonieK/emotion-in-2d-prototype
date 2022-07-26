@@ -29,8 +29,10 @@ public class SetColors : MonoBehaviour
         colors.Add("y,00", new Color32(103 ,93 ,70,255 ));
         colors.Add("n00", new Color32(51 ,48 ,48,255 ));
         colors.Add("n10", new Color32(121 ,118 ,119,255 ));
-        
-        changeColors();
+        if(PlayerPrefs.GetInt("newScene") == 1)
+        {
+            changeColors();
+        }
     }
   
     public void changeColors()

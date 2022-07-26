@@ -36,6 +36,7 @@ public class Initialize : MonoBehaviour
         PlayerPrefs.SetString("colors", "11,10,01,00,n1,n0");
         PlayerPrefs.SetInt("openDoor", 0);
         PlayerPrefs.SetInt("lvl",0);
+        PlayerPrefs.SetInt("newScene",1);
         PlayerPrefs.Save();
         
         //Debug.Log("Updating Times Taken...");

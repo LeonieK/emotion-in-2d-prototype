@@ -207,7 +207,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36.6
+  m_fontSize: 54.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -648,6 +648,7 @@ GameObject:
   - component: {fileID: 41573155}
   - component: {fileID: 41573154}
   - component: {fileID: 41573153}
+  - component: {fileID: 41573157}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -838,6 +839,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 41573151}
   m_CullTransparentMesh: 0
+--- !u!114 &41573157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41573151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0006d335323e4876bbd73b9f1a651ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helperType: 1
+  inputDescription: Welche Zahl kannst du erkennen?
 --- !u!1 &47776198
 GameObject:
   m_ObjectHideFlags: 0
@@ -1325,7 +1340,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.00009597738}
-  m_SizeDelta: {x: -1598.2758, y: 8}
+  m_SizeDelta: {x: -1598.0056, y: 8}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &55185073
 MonoBehaviour:
@@ -1404,7 +1419,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.00009597738}
-  m_SizeDelta: {x: -1600.7732, y: 8}
+  m_SizeDelta: {x: -1598.0056, y: 8}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &58952610
 MonoBehaviour:
@@ -2354,7 +2369,7 @@ MonoBehaviour:
   - {fileID: 1691937703}
   additionalCsvItems:
     array: []
-  pageBackgroundColor: {r: 0.9245, g: 0.9245, b: 0.9245, a: 1}
+  pageBackgroundColor: {r: 1, g: 1, b: 1, a: 1}
   pageBottomColor: {r: 0.76, g: 0.88, b: 1, a: 1}
   highlightColor: {r: 0, g: 0.67, b: 1, a: 1}
   running: 0
@@ -2767,6 +2782,7 @@ GameObject:
   - component: {fileID: 114871992}
   - component: {fileID: 114871991}
   - component: {fileID: 114871990}
+  - component: {fileID: 114871994}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -2957,6 +2973,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 114871988}
   m_CullTransparentMesh: 0
+--- !u!114 &114871994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114871988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0006d335323e4876bbd73b9f1a651ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helperType: 1
+  inputDescription: Welche Zahl kannst du erkennen?
 --- !u!1 &126196304
 GameObject:
   m_ObjectHideFlags: 0
@@ -3336,7 +3366,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -26}
-  m_SizeDelta: {x: 1384, y: 50}
+  m_SizeDelta: {x: 1384, y: 70}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &138794793
 MonoBehaviour:
@@ -3954,12 +3984,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
+  m_fontSize: 40
   m_fontSizeBase: 41
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 50
+  m_fontSizeMax: 40
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -4827,12 +4857,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
+  m_fontSize: 40
   m_fontSizeBase: 41
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 50
+  m_fontSizeMax: 40
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -4962,12 +4992,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
+  m_fontSize: 40
   m_fontSizeBase: 41
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 50
+  m_fontSizeMax: 40
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -6741,7 +6771,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36.6
+  m_fontSize: 54.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6876,12 +6906,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
+  m_fontSize: 40
   m_fontSizeBase: 41
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 50
+  m_fontSizeMax: 40
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -8261,7 +8291,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.00009597738}
-  m_SizeDelta: {x: -1598.2758, y: 8}
+  m_SizeDelta: {x: -1598.0056, y: 8}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &420174204
 MonoBehaviour:
@@ -10407,6 +10437,7 @@ GameObject:
   - component: {fileID: 529083235}
   - component: {fileID: 529083234}
   - component: {fileID: 529083233}
+  - component: {fileID: 529083237}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -10597,6 +10628,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 529083231}
   m_CullTransparentMesh: 0
+--- !u!114 &529083237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529083231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0006d335323e4876bbd73b9f1a651ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helperType: 1
+  inputDescription: Welche Zahl kannst du erkennen?
 --- !u!1 &537149330
 GameObject:
   m_ObjectHideFlags: 0
@@ -10886,7 +10931,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -33}
-  m_SizeDelta: {x: 1385, y: 50}
+  m_SizeDelta: {x: 1385, y: 70}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &550197106
 MonoBehaviour:
@@ -11424,7 +11469,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.00009597738}
-  m_SizeDelta: {x: -1598.2758, y: 8}
+  m_SizeDelta: {x: -1598.0056, y: 8}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &571152745
 MonoBehaviour:
@@ -11550,7 +11595,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36.6
+  m_fontSize: 54.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -12147,7 +12192,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.00009597738}
-  m_SizeDelta: {x: -1598.2758, y: 8}
+  m_SizeDelta: {x: -1598.0056, y: 8}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &585666001
 MonoBehaviour:
@@ -13880,7 +13925,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.00009597738}
-  m_SizeDelta: {x: -1598.2758, y: 8}
+  m_SizeDelta: {x: -1598.0056, y: 8}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &696188560
 MonoBehaviour:
@@ -16566,12 +16611,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
+  m_fontSize: 40
   m_fontSizeBase: 41
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 50
+  m_fontSizeMax: 40
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -16704,6 +16749,7 @@ GameObject:
   - component: {fileID: 826689875}
   - component: {fileID: 826689874}
   - component: {fileID: 826689873}
+  - component: {fileID: 826689877}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -16894,6 +16940,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826689871}
   m_CullTransparentMesh: 0
+--- !u!114 &826689877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826689871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0006d335323e4876bbd73b9f1a651ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helperType: 1
+  inputDescription: Welche Zahl kannst du erkennen?
 --- !u!1 &840078686
 GameObject:
   m_ObjectHideFlags: 0
@@ -18410,12 +18470,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
+  m_fontSize: 40
   m_fontSizeBase: 41
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 50
+  m_fontSizeMax: 40
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -19949,12 +20009,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
+  m_fontSize: 40
   m_fontSizeBase: 41
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 50
+  m_fontSizeMax: 40
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -21364,7 +21424,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.00009597738}
-  m_SizeDelta: {x: -1598.2758, y: 8}
+  m_SizeDelta: {x: -1598.0056, y: 8}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1086196923
 MonoBehaviour:
@@ -22258,6 +22318,7 @@ GameObject:
   - component: {fileID: 1134269422}
   - component: {fileID: 1134269421}
   - component: {fileID: 1134269420}
+  - component: {fileID: 1134269424}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -22448,6 +22509,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134269418}
   m_CullTransparentMesh: 0
+--- !u!114 &1134269424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134269418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0006d335323e4876bbd73b9f1a651ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helperType: 1
+  inputDescription: Welche Zahl kannst du erkennen?
 --- !u!1 &1135237522
 GameObject:
   m_ObjectHideFlags: 0
@@ -22931,6 +23006,7 @@ GameObject:
   - component: {fileID: 1159794123}
   - component: {fileID: 1159794122}
   - component: {fileID: 1159794121}
+  - component: {fileID: 1159794125}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -23121,6 +23197,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1159794119}
   m_CullTransparentMesh: 0
+--- !u!114 &1159794125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159794119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0006d335323e4876bbd73b9f1a651ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helperType: 1
+  inputDescription: Welche Zahl kannst du erkennen?
 --- !u!1 &1160029215
 GameObject:
   m_ObjectHideFlags: 0
@@ -24095,12 +24185,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
+  m_fontSize: 40
   m_fontSizeBase: 41
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 50
+  m_fontSizeMax: 40
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -25059,72 +25149,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1259470606
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1259470609}
-  - component: {fileID: 1259470608}
-  - component: {fileID: 1259470607}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1259470607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1259470606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &1259470608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1259470606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!4 &1259470609
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1259470606}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1260279171
 GameObject:
   m_ObjectHideFlags: 0
@@ -25656,7 +25680,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.00009597738}
-  m_SizeDelta: {x: -1598.2758, y: 8}
+  m_SizeDelta: {x: -1598.0056, y: 8}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1268752884
 MonoBehaviour:
@@ -28224,6 +28248,7 @@ GameObject:
   - component: {fileID: 1387685057}
   - component: {fileID: 1387685056}
   - component: {fileID: 1387685055}
+  - component: {fileID: 1387685059}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -28414,6 +28439,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1387685053}
   m_CullTransparentMesh: 0
+--- !u!114 &1387685059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387685053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0006d335323e4876bbd73b9f1a651ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helperType: 1
+  inputDescription: Welche Zahl kannst du erkennen?
 --- !u!1 &1387740843
 GameObject:
   m_ObjectHideFlags: 0
@@ -28758,7 +28797,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -29}
-  m_SizeDelta: {x: 1385, y: 50}
+  m_SizeDelta: {x: 1385, y: 70}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1402025274
 MonoBehaviour:
@@ -30042,7 +30081,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.00009597738}
-  m_SizeDelta: {x: -1598.2758, y: 8}
+  m_SizeDelta: {x: -1598.0056, y: 8}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1472874658
 MonoBehaviour:
@@ -30244,12 +30283,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
+  m_fontSize: 40
   m_fontSizeBase: 41
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 50
+  m_fontSizeMax: 40
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -30331,7 +30370,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.00009597738}
-  m_SizeDelta: {x: -1598.2758, y: 8}
+  m_SizeDelta: {x: -1598.0056, y: 8}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1494580104
 MonoBehaviour:
@@ -32485,12 +32524,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
+  m_fontSize: 40
   m_fontSizeBase: 41
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 50
+  m_fontSizeMax: 40
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -32988,6 +33027,7 @@ GameObject:
   - component: {fileID: 1622861397}
   - component: {fileID: 1622861396}
   - component: {fileID: 1622861395}
+  - component: {fileID: 1622861399}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -33178,6 +33218,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1622861393}
   m_CullTransparentMesh: 0
+--- !u!114 &1622861399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622861393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0006d335323e4876bbd73b9f1a651ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helperType: 1
+  inputDescription: Welche Zahl kannst du erkennen?
 --- !u!1 &1624556343
 GameObject:
   m_ObjectHideFlags: 0
@@ -38512,6 +38566,72 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1846058586
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1846058588}
+  - component: {fileID: 1846058587}
+  - component: {fileID: 1846058589}
+  m_Layer: 0
+  m_Name: WebCompatibleEventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1846058587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846058586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5fac8efe49e9924db40b5ea786cb205, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1846058588
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846058586}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 311.61108, y: 175.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1846058589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846058586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
 --- !u!1 &1849863545
 GameObject:
   m_ObjectHideFlags: 0
@@ -39952,11 +40072,11 @@ MonoBehaviour:
   - {fileID: 2126108254}
   additionalCsvItems:
     array: []
-  pageBackgroundColor: {r: 0.9245, g: 0.9245, b: 0.9245, a: 1}
+  pageBackgroundColor: {r: 1, g: 1, b: 1, a: 1}
   pageBottomColor: {r: 0.76, g: 0.88, b: 1, a: 1}
   highlightColor: {r: 0, g: 0.67, b: 1, a: 1}
   running: 0
-  selectedPage: 10
+  selectedPage: 0
   _qtManager: {fileID: 5058451749439193552}
 --- !u!4 &1919352771
 Transform:
@@ -42040,7 +42160,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.00009597738}
-  m_SizeDelta: {x: -1199.9999, y: 8}
+  m_SizeDelta: {x: -1598.0056, y: 8}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1998579584
 MonoBehaviour:
@@ -42170,6 +42290,7 @@ GameObject:
   - component: {fileID: 2002878202}
   - component: {fileID: 2002878201}
   - component: {fileID: 2002878200}
+  - component: {fileID: 2002878204}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -42360,6 +42481,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2002878198}
   m_CullTransparentMesh: 0
+--- !u!114 &2002878204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002878198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0006d335323e4876bbd73b9f1a651ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helperType: 1
+  inputDescription: Welche Zahl kannst du erkennen?
 --- !u!1 &2007824479
 GameObject:
   m_ObjectHideFlags: 0
@@ -43702,12 +43837,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
+  m_fontSize: 40
   m_fontSizeBase: 41
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 50
+  m_fontSizeMax: 40
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -43974,6 +44109,7 @@ GameObject:
   - component: {fileID: 2099817702}
   - component: {fileID: 2099817701}
   - component: {fileID: 2099817700}
+  - component: {fileID: 2099817704}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -44164,6 +44300,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2099817698}
   m_CullTransparentMesh: 0
+--- !u!114 &2099817704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099817698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0006d335323e4876bbd73b9f1a651ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helperType: 1
+  inputDescription: Welche Zahl kannst du erkennen?
 --- !u!1 &2102471128
 GameObject:
   m_ObjectHideFlags: 0
@@ -44940,6 +45090,7 @@ GameObject:
   - component: {fileID: 2144773586}
   - component: {fileID: 2144773585}
   - component: {fileID: 2144773584}
+  - component: {fileID: 2144773588}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -45130,6 +45281,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144773582}
   m_CullTransparentMesh: 0
+--- !u!114 &2144773588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144773582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0006d335323e4876bbd73b9f1a651ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helperType: 1
+  inputDescription: Welche Zahl kannst du erkennen?
 --- !u!114 &5058451749439193552
 MonoBehaviour:
   m_ObjectHideFlags: 0

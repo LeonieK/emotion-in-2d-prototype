@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 using System.IO;
+using System;
 
 /**
  This class is responsible to collect all data and send it to the database.
@@ -89,6 +90,12 @@ public class DatabaseCommunication : MonoBehaviour
                 + samresults[j].dominance.ToString() + "," + samresults[j].lvl.ToString()));
         }
         form.AddField("feedbackPOST",feedbackField.text);
+        
+        DateTime dataValuesStart = DateTime.Parse(PlayerPrefs.GetString("startTime"));
+        DateTime datatValuesEnd = DateTime.Now;
+        TimeSpan value = datatValuesEnd.Subtract(dataValuesStart);
+        Debug.Log("Result: " + value.ToString());
+        form.AddField("timeSpendPOST",value.ToString());
     
         UnityWebRequest www = UnityWebRequest.Post(url, form);
 
@@ -245,13 +252,17 @@ public class DatabaseCommunication : MonoBehaviour
             }
             if(tempCount > 0)
             {
+                //PlayerPrefs.SetString("currentColor", "b11"); 
+                //PlayerPrefs.Save();
                 dataString = dataString.Replace('"'.ToString(), "");
+                Debug.Log(dataString);
                 var dataValues = dataString.Split(',');
-                //Debug.Log("Hue: " + dataValues[4] + " // Brightness: " + dataValues[4]+ " // SaturatioN: " + dataValues[4]
-                //+ " // Arousal: " + dataValues[1] + " // Valence: " + dataValues[2] + " // Dominance: " + dataValues[3] + " // LVL: " + dataValues[5]);
+               
                 
                 var hsb = dataValues[4].ToCharArray();
-
+                //Debug.Log(dataValues[4].ToString());
+                //Debug.Log("Hue: " + hsb[0] + " // Brightness: " + (hsb[1]-'0')+ " // SaturatioN: " + (hsb[2]-'0')
+                //+ " // Arousal: " + dataValues[1] + " // Valence: " + dataValues[2] + " // Dominance: " + dataValues[3] + " // LVL: " + dataValues[5]);
                 SAMResult result = new SAMResult(hsb[0],(hsb[1]-'0'),(hsb[2]-'0'),
                 int.Parse(dataValues[1]),int.Parse(dataValues[2]),int.Parse(dataValues[3]),int.Parse(dataValues[5]));
                 samresults.Add(result);

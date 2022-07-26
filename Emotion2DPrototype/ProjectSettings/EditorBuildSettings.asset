@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Questionnaires/SAM_Questionnaire.unity
     guid: 82f1511a8acd66e439946cf982832b3b
   - enabled: 1
+    path: Assets/Scenes/NPCThankYou_lvl1.unity
+    guid: 4c98674f06c27ef4ca1830a2e2971ebe
+  - enabled: 1
     path: Assets/Scenes/99_InbetweenLvL2.unity
     guid: 5fe875e2cccd34e45b2cf1678daf3ae8
   - enabled: 1

@@ -9,6 +9,7 @@ public class InitializeLevel : MonoBehaviour
     {
         int lvl = PlayerPrefs.GetInt("lvl");
         PlayerPrefs.SetInt("lvl", lvl+1);
+        PlayerPrefs.Save();
     }
 
     // Update is called once per frame

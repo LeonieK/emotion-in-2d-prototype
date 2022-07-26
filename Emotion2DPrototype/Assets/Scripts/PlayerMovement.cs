@@ -11,18 +11,14 @@ public class PlayerMovement : MonoBehaviour
     bool jump = false;
     bool crouch = false;
     public bool canMove = true;
+    public bool touch = true;
 
-    // Update is called once per frames
-    void Update()
-    {
-        if(canMove)
+    /*private void Start() {
+        if(PlayerPrefs.GetInt("touch") == 0)
         {
-             horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-            if(Input.GetButtonDown("Jump")){
-                jump = true;
-            }
+            touch = false;
         }
-    }
+    }*/
 
     public void OnIdle()
     {
@@ -60,5 +56,14 @@ public class PlayerMovement : MonoBehaviour
             controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
             jump = false;
         }
+        /* else if(canMove && !touch)
+        {
+            if(Input.GetButtonDown("Jump")){
+                OnJumpButton();
+            }
+            horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+            controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+            jump = false;
+        }*/
     }
 }
