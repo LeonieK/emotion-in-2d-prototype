@@ -1,13 +1,22 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class LoadScene : MonoBehaviour
 {
     public string colors;
     public int lvl;
+    public String time;
     private void Start() {
         this.colors = PlayerPrefs.GetString("currentColor");
         this.lvl = PlayerPrefs.GetInt("lvl");
+        DateTime dataValuesStart = DateTime.Parse(PlayerPrefs.GetString("startTimeLevel"));
+        DateTime datatValuesEnd = DateTime.Now;
+        TimeSpan value = datatValuesEnd.Subtract(dataValuesStart);
+        string output = string.Format("{0}:{1:00}", 
+        (int)value.TotalMinutes, // <== Note the casting to int.
+        value.Seconds); 
+        this.time = output;
     }
     public void LoadNextScene()
     {

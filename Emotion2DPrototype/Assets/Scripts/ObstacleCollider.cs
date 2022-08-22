@@ -35,7 +35,7 @@ public class ObstacleCollider : MonoBehaviour
                     other.gameObject.transform.GetChild(0).transform.position.y);
                 StartCoroutine(GetInvulnerable());
             } else if (life <= 1 && !isInvincible){
-                hearts[0].gameObject.GetComponent<Animator>().SetTrigger("destroy");
+                hearts[life].gameObject.GetComponent<Animator>().SetTrigger("destroy");
                 //Destroy(hearts[0].gameObject, 0.7f);
                 hearts[0].gameObject.SetActive(false);
                 Die();

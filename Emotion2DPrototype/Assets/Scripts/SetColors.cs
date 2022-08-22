@@ -58,12 +58,27 @@ public class SetColors : MonoBehaviour
     public Color getRandomColor()
     {
         //char h = PlayerPrefs.GetString("h").ToCharArray()[0];
-        string colorString = PlayerPrefs.GetString("colors");
+        string colorString = PlayerPrefs.GetString("colors"); //"b11,b10,g11,g10,r11,r10,y11,y10,n1"
         var colorValues = colorString.Split(',');
         int randomNumber = Random.Range(0,colorValues.Length-1);
-        colorString.Replace(colorValues[randomNumber]+",", "");
+        Debug.Log("Random Number: " + randomNumber.ToString());
+        colorString = "";
+        for (int i = 0; i < colorValues.Length; i++)
+        {
+            if(i != randomNumber)
+            {
+                if(colorString != "")
+                {
+                    colorString = colorValues[i] + "," + colorString;
+                } else {
+                    colorString = colorValues[i];
+                }
+            }
+                
+        }
+        //colorString.Replace(colorValues[randomNumber]+",", "");
         Debug.Log("Set ColorString to: " + colorString);
-        PlayerPrefs.SetString("color", colorString);
+        PlayerPrefs.SetString("colors", colorString);
         PlayerPrefs.Save();
         
         Debug.Log("Color Values:" + colorValues[randomNumber]);

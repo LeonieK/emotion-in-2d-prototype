@@ -27,21 +27,17 @@ public class Initialize : MonoBehaviour
             File.Delete(Application.persistentDataPath +"/SAM.csv");
         }
 
-        //Debug.Log("Getting hue and setting playerid...");
         
         //StartCoroutine(getData(getURL, 1));
         
         PlayerPrefs.SetString("id", DateTimeOffset.Now.ToUnixTimeMilliseconds().ToString());
-        Debug.Log("ID:" + DateTimeOffset.Now.ToUnixTimeMilliseconds().ToString());
-        String h = PlayerPrefs.GetString("h1");
-        //PlayerPrefs.SetString("colors", h + "11," + h + "10," + h + "01," + h + "00," + "n1,n0");
+        //String h = PlayerPrefs.GetString("h1");
         PlayerPrefs.SetString("colors", "b11,b10,g11,g10,r11,r10,y11,y10,n1");
         PlayerPrefs.SetInt("openDoor", 0);
         PlayerPrefs.SetInt("lvl",0);
         //PlayerPrefs.SetInt("newScene",1);
         PlayerPrefs.Save();
         
-        //Debug.Log("Updating Times Taken...");
     }
     IEnumerator getData(string url, int i)
     {

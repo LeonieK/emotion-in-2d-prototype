@@ -17,10 +17,10 @@ public class ItemCollector : MonoBehaviour
         if(other.gameObject.CompareTag("Collectible"))
         {
             Destroy(other.gameObject);
-            coins++;
-            collectibleText.text = "x " + coins;
             PlayerPrefs.SetInt("coins", coins);
             PlayerPrefs.Save();
+            coins++;
+            collectibleText.text = "x " + coins;
         }
     }
 }

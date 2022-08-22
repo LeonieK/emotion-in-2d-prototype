@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class InitializeLevel : MonoBehaviour
 {
@@ -13,8 +14,9 @@ public class InitializeLevel : MonoBehaviour
         if(isRegularLvl)
         {
             int lvl = PlayerPrefs.GetInt("lvl");
-            textField.text = lvl + "/9";
+            textField.text = (lvl+1) + "/9";
             PlayerPrefs.SetInt("lvl", lvl+1);
+            PlayerPrefs.SetString("startTimeLevel", DateTime.Now.ToString());
             PlayerPrefs.Save();
         } else 
         {

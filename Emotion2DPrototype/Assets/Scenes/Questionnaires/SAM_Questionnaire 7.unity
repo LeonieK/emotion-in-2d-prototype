@@ -3574,6 +3574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colors: 
   lvl: 0
+  time: 
 --- !u!1 &448982436
 GameObject:
   m_ObjectHideFlags: 0
@@ -11328,7 +11329,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1600, y: 792.15}
   m_Pivot: {x: 0, y: 0}
 --- !u!1 &1259470606
 GameObject:
@@ -17491,6 +17492,12 @@ MonoBehaviour:
         _target: {fileID: 448607852}
         _component: LoadScene
         _name: lvl
+    - headerName: time_spent
+      itemValue:
+        _parameterTypes: []
+        _target: {fileID: 448607852}
+        _component: LoadScene
+        _name: time
   pageBackgroundColor: {r: 0.9245, g: 0.9245, b: 0.9245, a: 1}
   pageBottomColor: {r: 0.76, g: 0.88, b: 1, a: 1}
   highlightColor: {r: 0, g: 0.67, b: 1, a: 1}

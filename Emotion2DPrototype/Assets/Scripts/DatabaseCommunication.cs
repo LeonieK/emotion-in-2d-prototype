@@ -31,8 +31,9 @@ public class DatabaseCommunication : MonoBehaviour
         public int valence;
         public int dominance;
         public int lvl;
+        public string timeSpent;
 
-        public SAMResult(char hue, int brightness, int saturation, int arousal, int valence, int dominance, int lvl)
+        public SAMResult(char hue, int brightness, int saturation, int arousal, int valence, int dominance, int lvl, string timeSpent)
         {
             this.hue = hue;
             this.saturation = saturation;
@@ -41,6 +42,7 @@ public class DatabaseCommunication : MonoBehaviour
             this.valence = valence;
             this.dominance = dominance;
             this.lvl = lvl;
+            this.timeSpent = timeSpent;
         }
         public string toString()
         {
@@ -82,7 +84,7 @@ public class DatabaseCommunication : MonoBehaviour
         DateTime dataValuesStart = DateTime.Parse(PlayerPrefs.GetString("startTime"));
         DateTime datatValuesEnd = DateTime.Now;
         TimeSpan value = datatValuesEnd.Subtract(dataValuesStart);
-        Debug.Log("Time Spent: " + value.ToString());
+        //Debug.Log("Time Spent: " + value.ToString());
         form.AddField("timeSpendPOST",value.ToString());
 
         Debug.Log("Set Ishihara Data to Form");
@@ -99,7 +101,7 @@ public class DatabaseCommunication : MonoBehaviour
             form.AddField("samCollection"+(j+1)+"POST", (samresults[j].hue.ToString() + ","
                 + samresults[j].saturation.ToString() + "," + samresults[j].brightness.ToString() +"," 
                 + samresults[j].arousal.ToString() + "," + samresults[j].valence.ToString() + ","
-                + samresults[j].dominance.ToString() + "," + samresults[j].lvl.ToString()));
+                + samresults[j].dominance.ToString() + "," + samresults[j].lvl.ToString() + "," + samresults[j].timeSpent));
         }
         form.AddField("feedbackPOST",feedbackField.text);
         
@@ -127,7 +129,7 @@ public class DatabaseCommunication : MonoBehaviour
         StreamReader streamReader = new StreamReader(originPath);
         bool endOfFile = false;
         int tempCount = 0;
-        Debug.Log("Set General Data. deviceInfo: " + deviceInfo.ToString());
+
         while(!endOfFile)
         {
             string dataString = streamReader.ReadLine();
@@ -146,25 +148,25 @@ public class DatabaseCommunication : MonoBehaviour
                     age = 0;
                     gender = 'n';
                     experience = int.Parse(dataValues[4]);
-                    Debug.Log("Set General Data. age: " + age.ToString() + " ;gender: " + gender.ToString() + " ;experience: " + experience.ToString());
+                    //Debug.Log("Set General Data. age: " + age.ToString() + " ;gender: " + gender.ToString() + " ;experience: " + experience.ToString());
                 } else if (dataValues[2].Equals("Keine Angabe"))
                 {
                     age = int.Parse(dataValues[2]);
                     gender = 'n';
                     experience = int.Parse(dataValues[4]);
-                    Debug.Log("Set General Data. age: " + age.ToString() + " ;gender: " + gender.ToString() + " ;experience: " + experience.ToString());
+                    //Debug.Log("Set General Data. age: " + age.ToString() + " ;gender: " + gender.ToString() + " ;experience: " + experience.ToString());
                 } else if (dataValues[1].Equals("Keine Angabe"))
                 {
                     age = 0;
                     gender = dataValues[2].ToCharArray()[0];
                     experience = int.Parse(dataValues[3]);
-                    Debug.Log("Set General Data. age: " + age.ToString() + " ;gender: " + gender.ToString() + " ;experience: " + experience.ToString());
+                    //Debug.Log("Set General Data. age: " + age.ToString() + " ;gender: " + gender.ToString() + " ;experience: " + experience.ToString());
                 } else
                 {
                     age = int.Parse(dataValues[1]);
                     gender = dataValues[2].ToCharArray()[0];
                     experience = int.Parse(dataValues[3]);
-                    Debug.Log("Set General Data. age: " + age.ToString() + " ;gender: " + gender.ToString() + " ;experience: " + experience.ToString());
+                    //Debug.Log("Set General Data. age: " + age.ToString() + " ;gender: " + gender.ToString() + " ;experience: " + experience.ToString());
                 }
             }
             tempCount++;
@@ -188,16 +190,13 @@ public class DatabaseCommunication : MonoBehaviour
             }
             //dataString1 = dataString1.Replace('"'.ToString(), "");
             var dataValues1 = dataString1.Split(',');
-            Debug.Log("Ishihara Data Values Length: " + dataValues1.Length.ToString());
 
             if(tempCount == 1)
             {
                 for(int i = 1; i < dataValues1.Length; i++){
                     ishiharaData[i-1] = int.Parse(dataValues1[i]);
-                    Debug.Log("Set Ishihara Data plate" + i.ToString() + ": " + dataValues1[i]);
                 }
                 ishiharaResult = calculateScore(dataValues1);
-                Debug.Log("Set Ishihara Result: " + ishiharaResult);
             }
             tempCount++;
         }
@@ -269,15 +268,14 @@ public class DatabaseCommunication : MonoBehaviour
             if(tempCount > 0)
             {
                 dataString = dataString.Replace('"'.ToString(), "");
-                Debug.Log(dataString);
                 var dataValues = dataString.Split(',');
                
                 var hsb = dataValues[4].ToCharArray();
-                Debug.Log("Set SAM Data" + tempCount.ToString());
-                Debug.Log("Hue: " + hsb[0] + " // Brightness: " + (hsb[1]-'0')+ " // SaturatioN: " + (hsb[2]-'0')
-                + " // Arousal: " + dataValues[1] + " // Valence: " + dataValues[2] + " // Dominance: " + dataValues[3] + " // LVL: " + dataValues[5]);
+                //Debug.Log("Set SAM Data" + tempCount.ToString());
+                //Debug.Log("Hue: " + hsb[0] + " // Brightness: " + (hsb[1]-'0')+ " // SaturatioN: " + (hsb[2]-'0')
+                //+ " // Arousal: " + dataValues[1] + " // Valence: " + dataValues[2] + " // Dominance: " + dataValues[3] + " // LVL: " + dataValues[5] + " // TIME: " + dataValues[6]);
                 SAMResult result = new SAMResult(hsb[0],(hsb[1]-'0'),(hsb[2]-'0'),
-                int.Parse(dataValues[1]),int.Parse(dataValues[2]),int.Parse(dataValues[3]),int.Parse(dataValues[5]));
+                int.Parse(dataValues[1]),int.Parse(dataValues[2]),int.Parse(dataValues[3]),int.Parse(dataValues[5]), dataValues[6]);
                 samresults.Add(result);
             }
             tempCount++;
