@@ -13,13 +13,13 @@ using System;
 **/
 public class DatabaseCommunication : MonoBehaviour
 {
-    private string url = "https://survey1.emotionin2d.de/saveData.php";
+    private string urlSaveData = "https://survey1.emotionin2d.de/saveData.php";
     [SerializeField] private InputField feedbackField;
     private char gender;
     private int age;
     private int experience;
     private string deviceInfo;
-    private int[] ishiharaData = new int[10];
+    private int[] ishiharaData = new int[11];
     private char ishiharaResult;
     public List<SAMResult> samresults = new List<SAMResult>();
     
@@ -52,7 +52,7 @@ public class DatabaseCommunication : MonoBehaviour
     public void submitButtonPressed()
     {
         //Post Data to Database
-        StartCoroutine(postData(url));
+        StartCoroutine(postData(urlSaveData));
     }
 
     IEnumerator postData(string url)
@@ -69,19 +69,31 @@ public class DatabaseCommunication : MonoBehaviour
             Debug.LogError("There is no save data!");
         }
         
+        Debug.Log("Set general Data to Form: id: " + id + " ;gender: " + gender + " ;age: " + age 
+            + " ;experience: " + experience + " ;deviceInfo: " + deviceInfo);
         WWWForm form = new WWWForm();
         form.AddField("idPOST", id);
         form.AddField("genderPOST", gender);
         form.AddField("agePOST", age);
         form.AddField("experiencePOST", experience);
         form.AddField("deviceInfoPOST", deviceInfo);
+        
+        Debug.Log("Set Time Spent to form");
+        DateTime dataValuesStart = DateTime.Parse(PlayerPrefs.GetString("startTime"));
+        DateTime datatValuesEnd = DateTime.Now;
+        TimeSpan value = datatValuesEnd.Subtract(dataValuesStart);
+        Debug.Log("Time Spent: " + value.ToString());
+        form.AddField("timeSpendPOST",value.ToString());
 
-        for(int i = 0; i < ishiharaData.Length; i++){
-            form.AddField("plate"+(i+1)+"POST", ishiharaData[i]);
+        Debug.Log("Set Ishihara Data to Form");
+        for(int i = 1; i <= ishiharaData.Length; i++){
+            form.AddField("plate"+i.ToString()+"POST", ishiharaData[i-1]);
+            Debug.Log("plate"+i.ToString()+"POST");
         }
 
         form.AddField("ishiharaResultPOST", ishiharaResult);
 
+        Debug.Log("Set SAM Data to Form");
         for(int j = 0; j < samresults.Count; j++)
         {
             form.AddField("samCollection"+(j+1)+"POST", (samresults[j].hue.ToString() + ","
@@ -91,12 +103,9 @@ public class DatabaseCommunication : MonoBehaviour
         }
         form.AddField("feedbackPOST",feedbackField.text);
         
-        DateTime dataValuesStart = DateTime.Parse(PlayerPrefs.GetString("startTime"));
-        DateTime datatValuesEnd = DateTime.Now;
-        TimeSpan value = datatValuesEnd.Subtract(dataValuesStart);
-        Debug.Log("Result: " + value.ToString());
-        form.AddField("timeSpendPOST",value.ToString());
+        
     
+        Debug.Log("Send WebRequest to server");
         UnityWebRequest www = UnityWebRequest.Post(url, form);
 
         //Send the request then wait here until it returns
@@ -118,7 +127,7 @@ public class DatabaseCommunication : MonoBehaviour
         StreamReader streamReader = new StreamReader(originPath);
         bool endOfFile = false;
         int tempCount = 0;
-
+        Debug.Log("Set General Data. deviceInfo: " + deviceInfo.ToString());
         while(!endOfFile)
         {
             string dataString = streamReader.ReadLine();
@@ -137,21 +146,25 @@ public class DatabaseCommunication : MonoBehaviour
                     age = 0;
                     gender = 'n';
                     experience = int.Parse(dataValues[4]);
+                    Debug.Log("Set General Data. age: " + age.ToString() + " ;gender: " + gender.ToString() + " ;experience: " + experience.ToString());
                 } else if (dataValues[2].Equals("Keine Angabe"))
                 {
                     age = int.Parse(dataValues[2]);
                     gender = 'n';
                     experience = int.Parse(dataValues[4]);
+                    Debug.Log("Set General Data. age: " + age.ToString() + " ;gender: " + gender.ToString() + " ;experience: " + experience.ToString());
                 } else if (dataValues[1].Equals("Keine Angabe"))
                 {
                     age = 0;
                     gender = dataValues[2].ToCharArray()[0];
                     experience = int.Parse(dataValues[3]);
+                    Debug.Log("Set General Data. age: " + age.ToString() + " ;gender: " + gender.ToString() + " ;experience: " + experience.ToString());
                 } else
                 {
                     age = int.Parse(dataValues[1]);
                     gender = dataValues[2].ToCharArray()[0];
                     experience = int.Parse(dataValues[3]);
+                    Debug.Log("Set General Data. age: " + age.ToString() + " ;gender: " + gender.ToString() + " ;experience: " + experience.ToString());
                 }
             }
             tempCount++;
@@ -173,15 +186,18 @@ public class DatabaseCommunication : MonoBehaviour
                 endOfFile = true;
                 break;
             }
-            dataString1 = dataString1.Replace('"'.ToString(), "");
+            //dataString1 = dataString1.Replace('"'.ToString(), "");
             var dataValues1 = dataString1.Split(',');
+            Debug.Log("Ishihara Data Values Length: " + dataValues1.Length.ToString());
 
             if(tempCount == 1)
             {
-                for(int i = 0; i < ishiharaData.Length; i++){
-                    ishiharaData[i] = int.Parse(dataValues1[i+1]);
+                for(int i = 1; i < dataValues1.Length; i++){
+                    ishiharaData[i-1] = int.Parse(dataValues1[i]);
+                    Debug.Log("Set Ishihara Data plate" + i.ToString() + ": " + dataValues1[i]);
                 }
                 ishiharaResult = calculateScore(dataValues1);
+                Debug.Log("Set Ishihara Result: " + ishiharaResult);
             }
             tempCount++;
         }
@@ -252,17 +268,14 @@ public class DatabaseCommunication : MonoBehaviour
             }
             if(tempCount > 0)
             {
-                //PlayerPrefs.SetString("currentColor", "b11"); 
-                //PlayerPrefs.Save();
                 dataString = dataString.Replace('"'.ToString(), "");
                 Debug.Log(dataString);
                 var dataValues = dataString.Split(',');
                
-                
                 var hsb = dataValues[4].ToCharArray();
-                //Debug.Log(dataValues[4].ToString());
-                //Debug.Log("Hue: " + hsb[0] + " // Brightness: " + (hsb[1]-'0')+ " // SaturatioN: " + (hsb[2]-'0')
-                //+ " // Arousal: " + dataValues[1] + " // Valence: " + dataValues[2] + " // Dominance: " + dataValues[3] + " // LVL: " + dataValues[5]);
+                Debug.Log("Set SAM Data" + tempCount.ToString());
+                Debug.Log("Hue: " + hsb[0] + " // Brightness: " + (hsb[1]-'0')+ " // SaturatioN: " + (hsb[2]-'0')
+                + " // Arousal: " + dataValues[1] + " // Valence: " + dataValues[2] + " // Dominance: " + dataValues[3] + " // LVL: " + dataValues[5]);
                 SAMResult result = new SAMResult(hsb[0],(hsb[1]-'0'),(hsb[2]-'0'),
                 int.Parse(dataValues[1]),int.Parse(dataValues[2]),int.Parse(dataValues[3]),int.Parse(dataValues[5]));
                 samresults.Add(result);

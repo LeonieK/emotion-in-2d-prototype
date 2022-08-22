@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.Networking;
@@ -29,20 +28,22 @@ public class Initialize : MonoBehaviour
         }
 
         //Debug.Log("Getting hue and setting playerid...");
-        StartCoroutine(getData(getURL));
+        
+        //StartCoroutine(getData(getURL, 1));
         
         PlayerPrefs.SetString("id", DateTimeOffset.Now.ToUnixTimeMilliseconds().ToString());
         Debug.Log("ID:" + DateTimeOffset.Now.ToUnixTimeMilliseconds().ToString());
-        PlayerPrefs.SetString("colors", "11,10,01,00,n1,n0");
+        String h = PlayerPrefs.GetString("h1");
+        //PlayerPrefs.SetString("colors", h + "11," + h + "10," + h + "01," + h + "00," + "n1,n0");
+        PlayerPrefs.SetString("colors", "b11,b10,g11,g10,r11,r10,y11,y10,n1");
         PlayerPrefs.SetInt("openDoor", 0);
         PlayerPrefs.SetInt("lvl",0);
-        PlayerPrefs.SetInt("newScene",1);
+        //PlayerPrefs.SetInt("newScene",1);
         PlayerPrefs.Save();
         
         //Debug.Log("Updating Times Taken...");
     }
-
-    IEnumerator getData(string url)
+    IEnumerator getData(string url, int i)
     {
         UnityWebRequest wwwGet = UnityWebRequest.Get(url);
         yield return wwwGet.SendWebRequest();
@@ -56,7 +57,7 @@ public class Initialize : MonoBehaviour
             h = dataValues[0];
             timesTaken = int.Parse(dataValues[1]) +1;
 
-            PlayerPrefs.SetString("h", h);
+            PlayerPrefs.SetString("h"+i, h);
             PlayerPrefs.Save();
             StartCoroutine(increaseTimesTaken(updateURL));
         }
